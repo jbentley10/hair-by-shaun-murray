@@ -21,57 +21,7 @@ const blockByType = (block: any) => {
   const contentType = block.__typename;
 
   switch (contentType) {
-    case "HeroBlock":
-      return (
-        <Hero
-          heading={block.heading}
-          subheading={block.subheading}
-          buttonLink={block.buttonLink}
-          buttonText={block.buttonText}
-        />
-      );
-
-    case "DividerTextBlock":
-      return <DividerText text={block.text} />;
-
-    case "CallToActionBlock":
-      return (
-        <CallToAction
-          heading={block.heading}
-          subheading={block.subheading}
-          buttonText={block.buttonText}
-          buttonLink={block.buttonLink}
-        />
-      );
-
-    case "Heading":
-      return <Heading heading={block.headingText} />;
-
-    case "ImageAndTextBlock":
-      return (
-        <ImageTextBlock
-          heading={block.heading}
-          image={block.image}
-          subtext={block.descriptionRich}
-          imageOnLeft={block.imageOnLeft}
-          buttonText={block.buttonText}
-          buttonLink={block.buttonLink}
-        />
-      );
-
-    case "ImageCards":
-      console.log(block);
-      return <ImageCards cards={block.imageCardsCollection.items} />;
-
-    case "LogoRow":
-      if (block.fields) {
-        const logos = block.logos;
-        const logosFields: LogoType[] = logos.map(
-          (logo: { fields: {} }) => logo.fields
-        );
-
-        return <LogoRow heading={block.heading} logos={logosFields} />;
-      }
+    default: break;
   }
 };
 
