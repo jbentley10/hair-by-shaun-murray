@@ -21,7 +21,7 @@ export default function Header() {
           <Link href="/about" className="text-[#e8d7a0] text-lg font-light hover:opacity-80 transition-opacity">
             About
           </Link>
-          <Link href="/book" className="text-[#e8d7a0] text-lg font-light hover:opacity-80 transition-opacity">
+          <Link href="/book-now" className="text-[#e8d7a0] text-lg font-light hover:opacity-80 transition-opacity">
             Book Now
           </Link>
           <Link href="/gallery" className="text-[#e8d7a0] text-lg font-light hover:opacity-80 transition-opacity">
