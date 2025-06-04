@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left Side - Logo */}
           <div className="flex flex-col">
-            <h2 className="text-[#e8d7a0] text-5xl md:text-6xl font-bold italic leading-none">hair</h2>
+            <h2 className="text-[#e8d7a0] text-5xl md:text-6xl font-bold leading-none">hair</h2>
             <div className="flex items-center gap-2 mt-1">
               <span className="text-[#e8d7a0] text-sm font-light">by</span>
               <span className="text-[#e8d7a0] text-lg font-light tracking-wide">Shaun Murray</span>

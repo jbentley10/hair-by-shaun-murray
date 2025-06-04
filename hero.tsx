@@ -7,7 +7,7 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <h1 className="text-[#1c3b5f] text-5xl md:text-6xl lg:text-7xl font-bold italic leading-tight">
+            <h1 className="text-[#1c3b5f] text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
               Expert Styling for
               <br />
               Your Signature Look
@@ -28,7 +28,7 @@ export default function Hero() {
           {/* Right Image */}
           <div className="relative">
             <div className="relative">
-              <div className="absolute -inset-4 bg-[#333333] rounded-lg transform rotate-2"></div>
+              <div className="absolute inset-0 bg-[#333333] rounded-lg translate-x-6 translate-y-6"></div>
               <img
                 src="/placeholder.svg?height=600&width=500"
                 alt="Professional hair styling example showing a woman with beautifully styled brown hair with highlights"

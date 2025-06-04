@@ -27,7 +27,7 @@ export default function Services() {
 
           {/* Right Content */}
           <div className="space-y-8">
-            <h2 className="text-[#1c3b5f] text-4xl md:text-5xl lg:text-6xl font-bold italic leading-tight">
+            <h2 className="text-[#1c3b5f] text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               Expert Color Artistry
             </h2>
 

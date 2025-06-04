@@ -1,5 +1,17 @@
 import type { Metadata } from 'next'
+import { Pacifico, Montserrat } from 'next/font/google'
 import './globals.css'
+
+const pacifico = Pacifico({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-pacifico',
+})
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+})
 
 export const metadata: Metadata = {
   title: 'v0 App',
@@ -14,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${pacifico.variable} ${montserrat.variable}`}>{children}</body>
     </html>
   )
 }
