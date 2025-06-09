@@ -3,15 +3,15 @@ import { Facebook, Star, Instagram } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2d2d2d] px-6 py-12 border-t-4 border-[#ff6b35]">
+    <footer className="bg-[#2d2d2d] px-6 py-12 border-t-4 border-[#0a2463]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left Side - Logo */}
           <div className="flex flex-col">
-            <h2 className="logo-text text-[#ff6b35] text-5xl md:text-6xl font-bold leading-none">hair</h2>
+            <h2 className="logo-text text-[#0a2463] text-5xl md:text-6xl font-bold leading-none">hair</h2>
             <div className="flex items-center gap-2 mt-1">
-              <span className="text-[#ff6b35] text-sm font-light">by</span>
-              <span className="text-[#ff6b35] text-lg font-light tracking-wide">Shaun Murray</span>
+              <span className="text-[#0a2463] text-sm font-light">by</span>
+              <span className="text-[#0a2463] text-lg font-light tracking-wide">Shaun Murray</span>
             </div>
           </div>
 
@@ -21,25 +21,25 @@ export default function Footer() {
             <nav className="flex flex-wrap gap-6 md:gap-8 justify-start lg:justify-end">
               <Link
                 href="/services"
-                className="text-white text-lg font-semibold hover:text-[#ff6b35] transition-colors duration-200"
+                className="text-white text-lg font-semibold hover:text-[#0a2463] transition-colors duration-200"
               >
                 SERVICES
               </Link>
               <Link
                 href="/about"
-                className="text-white text-lg font-semibold hover:text-[#ff6b35] transition-colors duration-200"
+                className="text-white text-lg font-semibold hover:text-[#0a2463] transition-colors duration-200"
               >
                 ABOUT
               </Link>
               <Link
                 href="/book"
-                className="text-white text-lg font-semibold hover:text-[#ff6b35] transition-colors duration-200"
+                className="text-white text-lg font-semibold hover:text-[#0a2463] transition-colors duration-200"
               >
                 BOOK NOW
               </Link>
               <Link
                 href="/gallery"
-                className="text-white text-lg font-semibold hover:text-[#ff6b35] transition-colors duration-200"
+                className="text-white text-lg font-semibold hover:text-[#0a2463] transition-colors duration-200"
               >
                 GALLERY
               </Link>
@@ -51,7 +51,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#ff6b35] transition-colors p-3 border-2 border-white hover:border-[#ff6b35]"
+                className="text-white hover:text-[#0a2463] transition-colors p-3 border-2 border-white hover:border-[#0a2463]"
                 aria-label="Visit our Facebook page"
               >
                 <Facebook size={24} />
@@ -60,7 +60,7 @@ export default function Footer() {
                 href="https://yelp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#ff6b35] transition-colors p-3 border-2 border-white hover:border-[#ff6b35]"
+                className="text-white hover:text-[#0a2463] transition-colors p-3 border-2 border-white hover:border-[#0a2463]"
                 aria-label="Visit our Yelp page"
               >
                 <Star size={24} />
@@ -69,7 +69,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#ff6b35] transition-colors p-3 border-2 border-white hover:border-[#ff6b35]"
+                className="text-white hover:text-[#0a2463] transition-colors p-3 border-2 border-white hover:border-[#0a2463]"
                 aria-label="Visit our Instagram page"
               >
                 <Instagram size={24} />
@@ -86,11 +86,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section - Copyright and Credits */}
-        <div className="mt-12 pt-8 border-t-2 border-[#ff6b35]">
+        <div className="mt-12 pt-8 border-t-2 border-[#0a2463]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white text-sm font-medium">Copyright 2025</p>
             <p className="text-white text-sm font-medium">
-              Site by <span className="font-bold text-[#ff6b35]">Palm Springs Web Design</span>
+              Site by <span className="font-bold text-[#0a2463]">Palm Springs Web Design</span>
             </p>
           </div>
         </div>

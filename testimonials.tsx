@@ -37,7 +37,7 @@ export default function Testimonials() {
     <section className="bg-[#2d2d2d] py-16 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#ff6b35] text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">
+        <h2 className="text-[#0a2463] text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">
           WHAT OUR CUSTOMERS SAY
         </h2>
 
@@ -46,7 +46,7 @@ export default function Testimonials() {
           {/* Previous Button */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 z-10 p-4 text-white hover:text-[#ff6b35] transition-colors duration-200 bg-[#2d2d2d] border-2 border-white hover:border-[#ff6b35]"
+            className="absolute left-0 z-10 p-4 text-white hover:text-[#0a2463] transition-colors duration-200 bg-[#2d2d2d] border-2 border-white hover:border-[#0a2463]"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={32} />
@@ -56,7 +56,7 @@ export default function Testimonials() {
           <div className="max-w-4xl mx-20">
             <div className="relative">
               {/* Shadow/Border Effect */}
-              <div className="absolute inset-0 bg-[#ff6b35] transform translate-x-4 translate-y-4"></div>
+              <div className="absolute inset-0 bg-[#0a2463] transform translate-x-4 translate-y-4"></div>
 
               {/* Main Card */}
               <div className="relative bg-white p-12 md:p-16 text-center border-4 border-[#2d2d2d]">
@@ -70,7 +70,7 @@ export default function Testimonials() {
           {/* Next Button */}
           <button
             onClick={goToNext}
-            className="absolute right-0 z-10 p-4 text-white hover:text-[#ff6b35] transition-colors duration-200 bg-[#2d2d2d] border-2 border-white hover:border-[#ff6b35]"
+            className="absolute right-0 z-10 p-4 text-white hover:text-[#0a2463] transition-colors duration-200 bg-[#2d2d2d] border-2 border-white hover:border-[#0a2463]"
             aria-label="Next testimonial"
           >
             <ChevronRight size={32} />
@@ -85,8 +85,8 @@ export default function Testimonials() {
               onClick={() => setCurrentIndex(index)}
               className={`w-4 h-4 transition-colors duration-200 border-2 ${
                 index === currentIndex
-                  ? "bg-[#ff6b35] border-[#ff6b35]"
-                  : "bg-transparent border-white hover:border-[#ff6b35]"
+                  ? "bg-[#0a2463] border-[#0a2463]"
+                  : "bg-transparent border-white hover:border-[#0a2463]"
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />

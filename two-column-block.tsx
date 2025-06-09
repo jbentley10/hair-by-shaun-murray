@@ -37,7 +37,7 @@ export default function TwoColumnBlock({
             {hasButton && (
               <Link
                 href={buttonLink}
-                className="inline-block bg-[#ff6b35] text-white px-10 py-4 text-lg font-bold hover:bg-[#e55a2b] transition-colors duration-200 border-4 border-[#ff6b35] hover:border-[#e55a2b]"
+                className="inline-block bg-[#0a2463] text-white px-10 py-4 text-lg font-bold hover:bg-[#071a45] transition-colors duration-200 border-4 border-[#0a2463] hover:border-[#071a45]"
               >
                 {buttonText}
               </Link>
@@ -48,7 +48,7 @@ export default function TwoColumnBlock({
           {hasImage && (
             <div className={`relative ${reverse ? "lg:col-start-1" : ""}`}>
               <div className="relative">
-                <div className="absolute inset-0 bg-[#ff6b35] transform translate-x-8 translate-y-8"></div>
+                <div className="absolute inset-0 bg-[#0a2463] transform translate-x-8 translate-y-8"></div>
                 <img
                   src={image || "/placeholder.svg"}
                   alt={imageAlt}

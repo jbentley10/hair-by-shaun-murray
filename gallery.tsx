@@ -54,7 +54,7 @@ export default function Gallery() {
               />
 
               {/* Hover overlay */}
-              <div className="absolute inset-0 bg-[#ff6b35] opacity-0 group-hover:opacity-20 transition-opacity duration-200"></div>
+              <div className="absolute inset-0 bg-[#0a2463] opacity-0 group-hover:opacity-20 transition-opacity duration-200"></div>
             </div>
           ))}
         </div>
