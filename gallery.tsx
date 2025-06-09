@@ -35,17 +35,17 @@ export default function Gallery() {
   ]
 
   return (
-    <section className="bg-[#f8f8f8] py-16 px-6">
+    <section className="bg-black py-16 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#1c3b5f] text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">Gallery Sample</h2>
+        <h2 className="text-[#ff3e9d] text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">GALLERY SAMPLE</h2>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {galleryImages.map((image) => (
             <div
               key={image.id}
-              className="aspect-square bg-[#d9d9d9] rounded-lg overflow-hidden hover:opacity-90 transition-opacity duration-200"
+              className="aspect-square bg-[#1a1a1a] overflow-hidden hover:opacity-90 transition-opacity duration-200 border-2 border-[#ff3e9d]"
             >
               <img
                 src={`/placeholder.svg?height=400&width=400&query=${encodeURIComponent(image.query)}`}
@@ -60,9 +60,9 @@ export default function Gallery() {
         <div className="text-center">
           <Link
             href="/gallery"
-            className="inline-block bg-[#e8d7a0] text-[#1c3b5f] px-12 py-4 rounded-lg text-lg font-medium hover:bg-[#dcc888] transition-colors duration-200"
+            className="inline-block bg-transparent text-[#ff3e9d] px-12 py-4 text-lg font-bold border-2 border-[#ff3e9d] hover:bg-[#ff3e9d] hover:text-white transition-colors duration-200"
           >
-            View Our Gallery
+            VIEW OUR GALLERY
           </Link>
         </div>
       </div>

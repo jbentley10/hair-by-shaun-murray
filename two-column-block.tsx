@@ -23,21 +23,21 @@ export default function TwoColumnBlock({
   const hasImage = image
 
   return (
-    <section className="bg-white py-16 px-6">
+    <section className="bg-[#121212] py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <div
           className={`${hasImage ? "grid lg:grid-cols-2 gap-12 items-center" : "flex justify-center"} ${reverse ? "lg:grid-flow-col-dense" : ""}`}
         >
           {/* Content */}
           <div className={`space-y-8 ${reverse ? "lg:col-start-2" : ""} ${!hasImage ? "text-center max-w-4xl" : ""}`}>
-            <h1 className="text-[#1c3b5f] text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">{heading}</h1>
+            <h1 className="text-[#ff3e9d] text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">{heading}</h1>
 
-            <p className="text-[#333333] text-lg md:text-xl leading-relaxed max-w-lg">{bodyText}</p>
+            <p className="text-white text-lg md:text-xl leading-relaxed max-w-lg">{bodyText}</p>
 
             {hasButton && (
               <Link
                 href={buttonLink}
-                className="inline-block bg-[#e8d7a0] text-[#1c3b5f] px-8 py-4 rounded-full text-lg font-medium hover:bg-[#dcc888] transition-colors duration-200"
+                className="inline-block bg-[#ff3e9d] text-white px-8 py-4 rounded-none text-lg font-bold hover:bg-[#d81b7a] transition-colors duration-200 border-2 border-[#ff3e9d] hover:border-white"
               >
                 {buttonText}
               </Link>
@@ -48,11 +48,11 @@ export default function TwoColumnBlock({
           {hasImage && (
             <div className={`relative ${reverse ? "lg:col-start-1" : ""}`}>
               <div className="relative">
-                <div className="absolute inset-0 bg-[#333333] rounded-lg translate-x-6 translate-y-6"></div>
+                <div className="absolute inset-0 bg-[#ff3e9d] rounded-none transform translate-x-6 translate-y-6"></div>
                 <img
                   src={image || "/placeholder.svg"}
                   alt={imageAlt}
-                  className="relative rounded-lg w-full h-auto object-cover shadow-lg"
+                  className="relative rounded-none w-full h-auto object-cover shadow-lg border-2 border-white"
                 />
               </div>
             </div>

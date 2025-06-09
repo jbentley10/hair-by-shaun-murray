@@ -34,11 +34,11 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="bg-[#f8f8f8] py-16 px-6">
+    <section className="bg-[#1a1a1a] py-16 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#1c3b5f] text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">
-          What Our Customers Say
+        <h2 className="text-[#ff3e9d] text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">
+          WHAT OUR CUSTOMERS SAY
         </h2>
 
         {/* Testimonial Carousel */}
@@ -46,7 +46,7 @@ export default function Testimonials() {
           {/* Previous Button */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 z-10 p-3 text-[#1c3b5f] hover:text-[#2a4a6b] transition-colors duration-200"
+            className="absolute left-0 z-10 p-3 text-white hover:text-[#ff3e9d] transition-colors duration-200"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={48} />
@@ -56,11 +56,11 @@ export default function Testimonials() {
           <div className="max-w-4xl mx-16">
             <div className="relative">
               {/* Shadow/Border Effect */}
-              <div className="absolute inset-0 bg-[#1c3b5f] rounded-3xl transform translate-x-2 translate-y-2"></div>
+              <div className="absolute inset-0 bg-[#ff3e9d] rounded-none transform translate-x-2 translate-y-2"></div>
 
               {/* Main Card */}
-              <div className="relative bg-[#e8d7a0] rounded-3xl p-12 md:p-16 text-center">
-                <p className="text-[#1c3b5f] text-xl md:text-2xl lg:text-3xl leading-relaxed font-medium">
+              <div className="relative bg-black rounded-none p-12 md:p-16 text-center border-2 border-white">
+                <p className="text-white text-xl md:text-2xl lg:text-3xl leading-relaxed font-medium">
                   {testimonials[currentIndex].text}
                 </p>
               </div>
@@ -70,7 +70,7 @@ export default function Testimonials() {
           {/* Next Button */}
           <button
             onClick={goToNext}
-            className="absolute right-0 z-10 p-3 text-[#1c3b5f] hover:text-[#2a4a6b] transition-colors duration-200"
+            className="absolute right-0 z-10 p-3 text-white hover:text-[#ff3e9d] transition-colors duration-200"
             aria-label="Next testimonial"
           >
             <ChevronRight size={48} />
@@ -83,8 +83,8 @@ export default function Testimonials() {
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                index === currentIndex ? "bg-[#1c3b5f]" : "bg-[#1c3b5f]/30"
+              className={`w-3 h-3 rounded-none transition-colors duration-200 ${
+                index === currentIndex ? "bg-[#ff3e9d]" : "bg-white/30"
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />

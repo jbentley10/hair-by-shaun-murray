@@ -98,7 +98,14 @@ body {
   h4,
   h5,
   h6 {
+    font-family: var(--font-bebas), sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .logo-text {
     font-family: var(--font-pacifico), cursive;
+    text-transform: none;
+    letter-spacing: normal;
   }
   p,
   a,
