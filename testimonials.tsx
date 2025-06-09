@@ -34,18 +34,11 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="bg-gradient-to-r from-[#16213e] via-[#1a1a2e] to-[#0a0a0a] py-16 px-6 relative">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#00ffff] rounded-full animate-pulse"></div>
-        <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-[#00ffff] rounded-full animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 right-1/3 w-1.5 h-1.5 bg-[#00ffff] rounded-full animate-pulse delay-500"></div>
-      </div>
-
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section className="bg-[#2d2d2d] py-16 px-6">
+      <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#00ffff] text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12 tracking-wide">
-          CLIENT TESTIMONIALS
+        <h2 className="text-[#ff6b35] text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">
+          WHAT OUR CUSTOMERS SAY
         </h2>
 
         {/* Testimonial Carousel */}
@@ -53,24 +46,21 @@ export default function Testimonials() {
           {/* Previous Button */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 z-10 p-3 text-white hover:text-[#00ffff] transition-colors duration-200 border border-[#00ffff]/30 hover:border-[#00ffff] rounded-full"
+            className="absolute left-0 z-10 p-4 text-white hover:text-[#ff6b35] transition-colors duration-200 bg-[#2d2d2d] border-2 border-white hover:border-[#ff6b35]"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={32} />
           </button>
 
           {/* Testimonial Card */}
-          <div className="max-w-4xl mx-16">
+          <div className="max-w-4xl mx-20">
             <div className="relative">
-              {/* Geometric background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#1a1a2e] to-[#16213e] transform skew-y-1"></div>
+              {/* Shadow/Border Effect */}
+              <div className="absolute inset-0 bg-[#ff6b35] transform translate-x-4 translate-y-4"></div>
 
               {/* Main Card */}
-              <div className="relative bg-gradient-to-br from-[#0a0a0a] to-[#1a1a2e] p-12 md:p-16 text-center border border-[#00ffff]/30 neon-border">
-                <div className="absolute top-4 left-4 w-4 h-4 border-l-2 border-t-2 border-[#00ffff]"></div>
-                <div className="absolute bottom-4 right-4 w-4 h-4 border-r-2 border-b-2 border-[#00ffff]"></div>
-
-                <p className="text-white text-xl md:text-2xl lg:text-3xl leading-relaxed font-light">
+              <div className="relative bg-white p-12 md:p-16 text-center border-4 border-[#2d2d2d]">
+                <p className="text-[#2d2d2d] text-xl md:text-2xl lg:text-3xl leading-relaxed font-semibold">
                   "{testimonials[currentIndex].text}"
                 </p>
               </div>
@@ -80,7 +70,7 @@ export default function Testimonials() {
           {/* Next Button */}
           <button
             onClick={goToNext}
-            className="absolute right-0 z-10 p-3 text-white hover:text-[#00ffff] transition-colors duration-200 border border-[#00ffff]/30 hover:border-[#00ffff] rounded-full"
+            className="absolute right-0 z-10 p-4 text-white hover:text-[#ff6b35] transition-colors duration-200 bg-[#2d2d2d] border-2 border-white hover:border-[#ff6b35]"
             aria-label="Next testimonial"
           >
             <ChevronRight size={32} />
@@ -88,13 +78,15 @@ export default function Testimonials() {
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center mt-8 space-x-3">
+        <div className="flex justify-center mt-8 space-x-4">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 transition-all duration-200 ${
-                index === currentIndex ? "bg-[#00ffff] neon-glow transform scale-125" : "bg-white/30 hover:bg-white/50"
+              className={`w-4 h-4 transition-colors duration-200 border-2 ${
+                index === currentIndex
+                  ? "bg-[#ff6b35] border-[#ff6b35]"
+                  : "bg-transparent border-white hover:border-[#ff6b35]"
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />
