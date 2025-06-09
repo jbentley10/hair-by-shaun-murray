@@ -6,7 +6,7 @@ import Footer from "../footer"
 
 export default function Page() {
   return (
-    <div className="bg-black text-white">
+    <div className="min-h-screen">
       <Header />
       <TwoColumnBlock
         heading="EXPERT STYLING FOR YOUR SIGNATURE LOOK"

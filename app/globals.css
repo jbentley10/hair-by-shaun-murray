@@ -10,6 +10,12 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .neon-glow {
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff, 0 0 20px #00ffff;
+  }
+  .neon-border {
+    box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+  }
 }
 
 @layer base {
@@ -90,7 +96,8 @@ body {
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-inter), sans-serif;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
   }
   h1,
   h2,
@@ -98,9 +105,9 @@ body {
   h4,
   h5,
   h6 {
-    font-family: var(--font-bebas), sans-serif;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+    font-family: var(--font-oswald), sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.02em;
   }
   .logo-text {
     font-family: var(--font-pacifico), cursive;
@@ -118,6 +125,6 @@ body {
   li,
   td,
   th {
-    font-family: var(--font-montserrat), sans-serif;
+    font-family: var(--font-inter), sans-serif;
   }
 }

@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Pacifico, Bebas_Neue, Montserrat } from "next/font/google"
+import { Pacifico, Oswald, Inter } from "next/font/google"
 import "./globals.css"
 
 const pacifico = Pacifico({
@@ -9,20 +9,20 @@ const pacifico = Pacifico({
   variable: "--font-pacifico",
 })
 
-const bebasNeue = Bebas_Neue({
-  weight: "400",
+const oswald = Oswald({
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-bebas",
+  variable: "--font-oswald",
 })
 
-const montserrat = Montserrat({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-inter",
 })
 
 export const metadata: Metadata = {
-  title: "Hair by Shaun Murray | Bold & Daring",
-  description: "Expert hair styling and color artistry in Palm Springs",
+  title: "Hair by Shaun Murray | Electric Urban",
+  description: "Cutting-edge hair styling and color artistry in Palm Springs",
   generator: "v0.dev",
 }
 
@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${pacifico.variable} ${bebasNeue.variable} ${montserrat.variable}`}>{children}</body>
+      <body className={`${pacifico.variable} ${oswald.variable} ${inter.variable}`}>{children}</body>
     </html>
   )
 }
