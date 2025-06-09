@@ -38,9 +38,7 @@ export default function Gallery() {
     <section className="bg-[#f8f8f8] py-16 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#1c3b5f] text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">
-          Gallery Sample
-        </h2>
+        <h2 className="text-[#1c3b5f] text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">Gallery Sample</h2>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">

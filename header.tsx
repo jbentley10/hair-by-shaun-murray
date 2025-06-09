@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"
 
 export default function Header() {
   return (
@@ -7,42 +7,26 @@ export default function Header() {
         {/* Logo Section */}
         <div className="flex flex-col">
           <Link href="/">
-            <h1 className="text-[#e8d7a0] text-5xl md:text-6xl font-bold leading-none">
-              hair
-            </h1>
+            <h1 className="text-[#e8d7a0] text-5xl md:text-6xl font-bold leading-none">hair</h1>
             <div className="flex items-center gap-2 mt-1">
               <span className="text-[#e8d7a0] text-sm font-light">by</span>
-              <span className="text-[#e8d7a0] text-lg font-light tracking-wide">
-                Shaun Murray
-              </span>
+              <span className="text-[#e8d7a0] text-lg font-light tracking-wide">Shaun Murray</span>
             </div>
           </Link>
         </div>
 
         {/* Navigation Menu */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link
-            href="/services"
-            className="text-[#e8d7a0] text-lg font-light hover:opacity-80 transition-opacity"
-          >
+          <Link href="/services" className="text-[#e8d7a0] text-lg font-light hover:opacity-80 transition-opacity">
             Services
           </Link>
-          <Link
-            href="/about"
-            className="text-[#e8d7a0] text-lg font-light hover:opacity-80 transition-opacity"
-          >
+          <Link href="/about" className="text-[#e8d7a0] text-lg font-light hover:opacity-80 transition-opacity">
             About
           </Link>
-          <Link
-            href="/book-now"
-            className="text-[#e8d7a0] text-lg font-light hover:opacity-80 transition-opacity"
-          >
+          <Link href="/book-now" className="text-[#e8d7a0] text-lg font-light hover:opacity-80 transition-opacity">
             Book Now
           </Link>
-          <Link
-            href="/gallery"
-            className="text-[#e8d7a0] text-lg font-light hover:opacity-80 transition-opacity"
-          >
+          <Link href="/gallery" className="text-[#e8d7a0] text-lg font-light hover:opacity-80 transition-opacity">
             Gallery
           </Link>
         </nav>
@@ -51,5 +35,5 @@ export default function Header() {
         <button className="md:hidden text-[#e8d7a0] text-2xl">☰</button>
       </div>
     </header>
-  );
+  )
 }

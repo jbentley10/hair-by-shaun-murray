@@ -92,10 +92,25 @@ body {
     @apply bg-background text-foreground;
     font-family: var(--font-montserrat), sans-serif;
   }
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-pacifico), cursive;
   }
-  p, a, span, div, button, input, textarea, label, li, td, th {
+  p,
+  a,
+  span,
+  div,
+  button,
+  input,
+  textarea,
+  label,
+  li,
+  td,
+  th {
     font-family: var(--font-montserrat), sans-serif;
   }
 }
