@@ -1,17 +1,21 @@
-import Link from "next/link"
-import { Facebook, Star, Instagram } from "lucide-react"
+import Link from "next/link";
+import { Facebook, Star, Instagram } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2d2d2d] px-6 py-12 border-t-4 border-[#0a2463]">
+    <footer className="bg-[#2d2d2d] px-6 py-12 border-t-4 border-[#ffffff]">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left Side - Logo */}
           <div className="flex flex-col">
-            <h2 className="logo-text text-[#0a2463] text-5xl md:text-6xl font-bold leading-none">hair</h2>
+            <h2 className="logo-text text-[#ffffff] text-5xl md:text-6xl font-bold leading-none">
+              hair
+            </h2>
             <div className="flex items-center gap-2 mt-1">
-              <span className="text-[#0a2463] text-sm font-light">by</span>
-              <span className="text-[#0a2463] text-lg font-light tracking-wide">Shaun Murray</span>
+              <span className="text-[#ffffff] text-sm font-light">by</span>
+              <span className="text-[#ffffff] text-lg font-light tracking-wide">
+                Shaun Murray
+              </span>
             </div>
           </div>
 
@@ -90,11 +94,16 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white text-sm font-medium">Copyright 2025</p>
             <p className="text-white text-sm font-medium">
-              Site by <span className="font-bold text-[#0a2463]">Palm Springs Web Design</span>
+              Site by{" "}
+              <Link href="https://palmspringswebdesign.net" target="_blank">
+                <span className="font-bold text-[#4753a7]">
+                  Palm Springs Web Design
+                </span>
+              </Link>
             </p>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

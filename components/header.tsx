@@ -7,10 +7,10 @@ export default function Header() {
         {/* Logo Section */}
         <div className="flex flex-col">
           <Link href="/">
-            <h1 className="logo-text text-[#0a2463] text-5xl md:text-6xl font-bold leading-none">hair</h1>
+            <h1 className="logo-text text-[#ffffff] text-5xl md:text-6xl font-bold leading-none">hair</h1>
             <div className="flex items-center gap-2 mt-1">
-              <span className="text-[#0a2463] text-sm font-light">by</span>
-              <span className="text-[#0a2463] text-lg font-light tracking-wide">Shaun Murray</span>
+              <span className="text-[#ffffff] text-sm font-light">by</span>
+              <span className="text-[#ffffff] text-lg font-light tracking-wide">Shaun Murray</span>
             </div>
           </Link>
         </div>

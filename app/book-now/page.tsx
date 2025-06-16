@@ -1,6 +1,6 @@
-import Header from "../../header"
-import TwoColumnBlock from "../../two-column-block"
-import Footer from "../../footer"
+import Header from "../../components/header"
+import TwoColumnBlock from "../../components/two-column-block"
+import Footer from "../../components/footer"
 
 export default function Page() {
   return (
@@ -12,6 +12,7 @@ export default function Page() {
 (760) 333-3333."
       />
       <TwoColumnBlock heading="Online Booking" bodyText="iFrame goes here" reverse={false} />
+      <iframe src="https://ronsmith.salonmonster.com/client/index.php?layout=2" width='100%' min-width='630px' style={{minHeight: 600}}></iframe>
       <Footer />
     </div>
   )

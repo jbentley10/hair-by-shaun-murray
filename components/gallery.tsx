@@ -48,7 +48,7 @@ export default function Gallery() {
               className="aspect-square bg-[#f5f5f5] overflow-hidden hover:scale-105 transition-transform duration-200 border-4 border-[#2d2d2d] relative group"
             >
               <img
-                src={`/placeholder.svg?height=400&width=400&query=${encodeURIComponent(image.query)}`}
+                src={`/hair-${image.id}.webp?height=400&width=400&query=${encodeURIComponent(image.query)}`}
                 alt={image.alt}
                 className="w-full h-full object-cover"
               />
