@@ -34,17 +34,17 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="bg-[#333333] py-20 px-6">
+    <section className="bg-[#7bc9d1] py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#84d4db] text-3xl md:text-4xl font-light text-center mb-16">Client Testimonials</h2>
+        <h2 className="text-[#2a2a2a] text-3xl md:text-4xl font-light text-center mb-16">Client Testimonials</h2>
 
         {/* Testimonial Carousel */}
         <div className="relative flex items-center justify-center">
           {/* Previous Button */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 z-10 p-3 text-gray-500 hover:text-[#84d4db] transition-colors duration-300"
+            className="absolute left-0 z-10 p-3 text-[#4a4a4a] hover:text-[#2a2a2a] transition-colors duration-300"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={24} />
@@ -53,7 +53,7 @@ export default function Testimonials() {
           {/* Testimonial Card */}
           <div className="max-w-4xl mx-16">
             <div className="text-center">
-              <p className="text-[#f5f5f5] text-xl md:text-2xl leading-relaxed font-light italic">
+              <p className="text-[#1f1f1f] text-xl md:text-2xl leading-relaxed font-light italic">
                 "{testimonials[currentIndex].text}"
               </p>
             </div>
@@ -62,7 +62,7 @@ export default function Testimonials() {
           {/* Next Button */}
           <button
             onClick={goToNext}
-            className="absolute right-0 z-10 p-3 text-gray-500 hover:text-[#84d4db] transition-colors duration-300"
+            className="absolute right-0 z-10 p-3 text-[#4a4a4a] hover:text-[#2a2a2a] transition-colors duration-300"
             aria-label="Next testimonial"
           >
             <ChevronRight size={24} />
@@ -76,7 +76,7 @@ export default function Testimonials() {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                index === currentIndex ? "bg-[#84d4db]" : "bg-gray-600 hover:bg-gray-500"
+                index === currentIndex ? "bg-[#2a2a2a]" : "bg-[#5a5a5a] hover:bg-[#4a4a4a]"
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />

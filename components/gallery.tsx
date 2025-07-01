@@ -35,10 +35,10 @@ export default function Gallery() {
   ]
 
   return (
-    <section className="bg-[#2a2a2a] py-20 px-6">
+    <section className="bg-[#84d4db] py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#84d4db] text-3xl md:text-4xl font-light text-center mb-16">Portfolio</h2>
+        <h2 className="text-[#2a2a2a] text-3xl md:text-4xl font-light text-center mb-16">Portfolio</h2>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
@@ -57,7 +57,7 @@ export default function Gallery() {
         <div className="text-center">
           <Link
             href="/gallery"
-            className="inline-block bg-[#84d4db] text-black px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-[#7bc9d1] transition-colors duration-300"
+            className="inline-block bg-[#2a2a2a] text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-[#1f1f1f] transition-colors duration-300"
           >
             View Full Gallery
           </Link>
