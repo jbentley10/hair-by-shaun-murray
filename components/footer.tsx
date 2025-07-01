@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Logo */}
           <div className="flex flex-col">
-            <h2 className="logo-text text-[#ff7675] text-4xl md:text-5xl leading-none">hair</h2>
+            <h2 className="logo-text text-[#84d4db] text-4xl md:text-5xl leading-none">hair</h2>
             <div className="flex items-center gap-2 mt-2">
               <span className="text-gray-400 text-xs font-light uppercase tracking-wider">by</span>
               <span className="text-gray-400 text-sm font-light tracking-wide">Shaun Murray</span>
@@ -21,25 +21,25 @@ export default function Footer() {
             <nav className="flex flex-wrap gap-8 justify-start lg:justify-end">
               <Link
                 href="/services"
-                className="text-gray-300 text-sm font-medium uppercase tracking-wider hover:text-[#ff7675] transition-colors duration-300"
+                className="text-gray-300 text-sm font-medium uppercase tracking-wider hover:text-[#84d4db] transition-colors duration-300"
               >
                 Services
               </Link>
               <Link
                 href="/about"
-                className="text-gray-300 text-sm font-medium uppercase tracking-wider hover:text-[#ff7675] transition-colors duration-300"
+                className="text-gray-300 text-sm font-medium uppercase tracking-wider hover:text-[#84d4db] transition-colors duration-300"
               >
                 About
               </Link>
               <Link
                 href="/book"
-                className="text-gray-300 text-sm font-medium uppercase tracking-wider hover:text-[#ff7675] transition-colors duration-300"
+                className="text-gray-300 text-sm font-medium uppercase tracking-wider hover:text-[#84d4db] transition-colors duration-300"
               >
                 Book Now
               </Link>
               <Link
                 href="/gallery"
-                className="text-gray-300 text-sm font-medium uppercase tracking-wider hover:text-[#ff7675] transition-colors duration-300"
+                className="text-gray-300 text-sm font-medium uppercase tracking-wider hover:text-[#84d4db] transition-colors duration-300"
               >
                 Gallery
               </Link>
@@ -51,7 +51,7 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#ff7675] transition-colors duration-300"
+                className="text-gray-400 hover:text-[#84d4db] transition-colors duration-300"
                 aria-label="Visit our Facebook page"
               >
                 <Facebook size={20} />
@@ -60,7 +60,7 @@ export default function Footer() {
                 href="https://yelp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#ff7675] transition-colors duration-300"
+                className="text-gray-400 hover:text-[#84d4db] transition-colors duration-300"
                 aria-label="Visit our Yelp page"
               >
                 <Star size={20} />
@@ -69,7 +69,7 @@ export default function Footer() {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-[#ff7675] transition-colors duration-300"
+                className="text-gray-400 hover:text-[#84d4db] transition-colors duration-300"
                 aria-label="Visit our Instagram page"
               >
                 <Instagram size={20} />
@@ -92,7 +92,7 @@ export default function Footer() {
             <p className="text-gray-500 text-xs font-light">
               Site by{" "}
               <Link href="https://palmspringswebdesign.net" target="_blank">
-                <span className="text-gray-400 hover:text-[#ff7675] transition-colors duration-300">
+                <span className="text-gray-400 hover:text-[#84d4db] transition-colors duration-300">
                   Palm Springs Web Design
                 </span>
               </Link>

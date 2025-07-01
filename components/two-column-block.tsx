@@ -30,14 +30,14 @@ export default function TwoColumnBlock({
         >
           {/* Content */}
           <div className={`space-y-8 ${reverse ? "lg:col-start-2" : ""} ${!hasImage ? "text-center max-w-4xl" : ""}`}>
-            <h1 className="text-[#ff7675] text-3xl md:text-4xl lg:text-5xl leading-tight font-light">{heading}</h1>
+            <h1 className="text-[#84d4db] text-3xl md:text-4xl lg:text-5xl leading-tight font-light">{heading}</h1>
 
             <p className="text-[#f5f5f5] text-lg leading-relaxed max-w-lg font-light">{bodyText}</p>
 
             {hasButton && (
               <Link
                 href={buttonLink}
-                className="inline-block bg-[#ff7675] text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-[#fd6c6c] transition-colors duration-300"
+                className="inline-block bg-[#84d4db] text-black px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-[#7bc9d1] transition-colors duration-300"
               >
                 {buttonText}
               </Link>

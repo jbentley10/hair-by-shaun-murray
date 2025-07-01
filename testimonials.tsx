@@ -37,14 +37,14 @@ export default function Testimonials() {
     <section className="bg-[#333333] py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#ff7675] text-3xl md:text-4xl font-light text-center mb-16">Client Testimonials</h2>
+        <h2 className="text-[#84d4db] text-3xl md:text-4xl font-light text-center mb-16">Client Testimonials</h2>
 
         {/* Testimonial Carousel */}
         <div className="relative flex items-center justify-center">
           {/* Previous Button */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 z-10 p-3 text-gray-500 hover:text-[#ff7675] transition-colors duration-300"
+            className="absolute left-0 z-10 p-3 text-gray-500 hover:text-[#84d4db] transition-colors duration-300"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={24} />
@@ -62,7 +62,7 @@ export default function Testimonials() {
           {/* Next Button */}
           <button
             onClick={goToNext}
-            className="absolute right-0 z-10 p-3 text-gray-500 hover:text-[#ff7675] transition-colors duration-300"
+            className="absolute right-0 z-10 p-3 text-gray-500 hover:text-[#84d4db] transition-colors duration-300"
             aria-label="Next testimonial"
           >
             <ChevronRight size={24} />
@@ -76,7 +76,7 @@ export default function Testimonials() {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                index === currentIndex ? "bg-[#ff7675]" : "bg-gray-600 hover:bg-gray-500"
+                index === currentIndex ? "bg-[#84d4db]" : "bg-gray-600 hover:bg-gray-500"
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />
