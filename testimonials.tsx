@@ -34,17 +34,17 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="bg-gray-50 py-20 px-6">
+    <section className="bg-black py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-black text-3xl md:text-4xl font-light text-center mb-16">Client Testimonials</h2>
+        <h2 className="text-[#bce1ed] text-3xl md:text-4xl font-light text-center mb-16">Client Testimonials</h2>
 
         {/* Testimonial Carousel */}
         <div className="relative flex items-center justify-center">
           {/* Previous Button */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 z-10 p-3 text-gray-400 hover:text-black transition-colors duration-300"
+            className="absolute left-0 z-10 p-3 text-gray-500 hover:text-[#bce1ed] transition-colors duration-300"
             aria-label="Previous testimonial"
           >
             <ChevronLeft size={24} />
@@ -53,7 +53,7 @@ export default function Testimonials() {
           {/* Testimonial Card */}
           <div className="max-w-4xl mx-16">
             <div className="text-center">
-              <p className="text-gray-800 text-xl md:text-2xl leading-relaxed font-light italic">
+              <p className="text-white text-xl md:text-2xl leading-relaxed font-light italic">
                 "{testimonials[currentIndex].text}"
               </p>
             </div>
@@ -62,7 +62,7 @@ export default function Testimonials() {
           {/* Next Button */}
           <button
             onClick={goToNext}
-            className="absolute right-0 z-10 p-3 text-gray-400 hover:text-black transition-colors duration-300"
+            className="absolute right-0 z-10 p-3 text-gray-500 hover:text-[#bce1ed] transition-colors duration-300"
             aria-label="Next testimonial"
           >
             <ChevronRight size={24} />
@@ -76,7 +76,7 @@ export default function Testimonials() {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                index === currentIndex ? "bg-black" : "bg-gray-300 hover:bg-gray-400"
+                index === currentIndex ? "bg-[#bce1ed]" : "bg-gray-700 hover:bg-gray-600"
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />

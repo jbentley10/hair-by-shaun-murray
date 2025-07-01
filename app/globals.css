@@ -71,7 +71,8 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-inter), sans-serif;
-    background-color: #fafafa;
+    background-color: #000000;
+    color: white;
   }
   h1,
   h2,
@@ -82,12 +83,14 @@
     font-family: var(--font-playfair), serif;
     font-weight: 400;
     letter-spacing: -0.02em;
+    color: #bce1ed;
   }
   .logo-text {
     font-family: var(--font-playfair), serif;
     font-style: italic;
     font-weight: 400;
     letter-spacing: -0.01em;
+    color: #bce1ed;
   }
   p,
   a,
