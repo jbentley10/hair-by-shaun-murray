@@ -1,11 +1,12 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Playfair_Display, Inter } from "next/font/google"
+import { Lato, Inter } from "next/font/google"
 import "./globals.css"
 
-const playfairDisplay = Playfair_Display({
+const lato = Lato({
+  weight: ["300", "400", "700"],
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-lato",
 })
 
 const inter = Inter({
@@ -26,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfairDisplay.variable} ${inter.variable}`}>{children}</body>
+      <body className={`${lato.variable} ${inter.variable}`}>{children}</body>
     </html>
   )
 }

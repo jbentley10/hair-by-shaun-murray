@@ -80,16 +80,16 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-playfair), serif;
-    font-weight: 400;
-    letter-spacing: -0.02em;
+    font-family: var(--font-lato), sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
     color: #bce1ed;
   }
   .logo-text {
-    font-family: var(--font-playfair), serif;
+    font-family: var(--font-lato), sans-serif;
     font-style: italic;
-    font-weight: 400;
-    letter-spacing: -0.01em;
+    font-weight: 300;
+    letter-spacing: 0.01em;
     color: #bce1ed;
   }
   p,
