@@ -37,7 +37,7 @@ export default function Testimonials() {
     <section className="bg-[#7bc9d1] py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#2a2a2a] text-3xl md:text-4xl font-light text-center mb-16">Client Testimonials</h2>
+        <h2 className="text-[#2a2a2a] text-3xl md:text-4xl font-bold text-center mb-16">Client Testimonials</h2>
 
         {/* Testimonial Carousel */}
         <div className="relative flex items-center justify-center">
