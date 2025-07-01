@@ -23,21 +23,21 @@ export default function TwoColumnBlock({
   const hasImage = image
 
   return (
-    <section className="bg-black py-20 px-6">
+    <section className="bg-[#2a2a2a] py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div
           className={`${hasImage ? "grid lg:grid-cols-2 gap-16 items-center" : "flex justify-center"} ${reverse ? "lg:grid-flow-col-dense" : ""}`}
         >
           {/* Content */}
           <div className={`space-y-8 ${reverse ? "lg:col-start-2" : ""} ${!hasImage ? "text-center max-w-4xl" : ""}`}>
-            <h1 className="text-[#bce1ed] text-3xl md:text-4xl lg:text-5xl leading-tight font-light">{heading}</h1>
+            <h1 className="text-[#ff7675] text-3xl md:text-4xl lg:text-5xl leading-tight font-light">{heading}</h1>
 
-            <p className="text-white text-lg leading-relaxed max-w-lg font-light">{bodyText}</p>
+            <p className="text-[#f5f5f5] text-lg leading-relaxed max-w-lg font-light">{bodyText}</p>
 
             {hasButton && (
               <Link
                 href={buttonLink}
-                className="inline-block bg-[#bce1ed] text-black px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-[#a5d4e1] transition-colors duration-300"
+                className="inline-block bg-[#ff7675] text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-[#fd6c6c] transition-colors duration-300"
               >
                 {buttonText}
               </Link>
