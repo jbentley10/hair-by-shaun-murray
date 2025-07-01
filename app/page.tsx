@@ -9,19 +9,19 @@ export default function Page() {
     <div>
       <Header />
       <TwoColumnBlock
-        heading="EXPERT STYLING FOR YOUR SIGNATURE LOOK"
-        bodyText="Hair artistry in Palm Springs, where style meets personalized care."
+        heading="Expert Styling for Your Signature Look"
+        bodyText="Hair artistry in Palm Springs, where style meets personalized care. Experience the difference of luxury hair services tailored to your unique vision."
         buttonLink="/book"
-        buttonText="BOOK YOUR APPOINTMENT"
+        buttonText="Book Your Appointment"
         image="/hair-1.webp?height=600&width=500"
         imageAlt="Professional hair styling example showing a woman with beautifully styled brown hair with highlights"
       />
       <Testimonials />
       <TwoColumnBlock
-        heading="EXPERT COLOR ARTISTRY"
+        heading="Expert Color Artistry"
         bodyText="Master colorists specializing in balayage, foiling, and dimensional techniques that enhance your natural beauty. We blend art and science for stunning, long-lasting results."
         buttonLink="/services"
-        buttonText="EXPLORE SERVICES"
+        buttonText="Explore Services"
         image="/hair-2.webp?height=600&width=600"
         imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
         reverse={true}

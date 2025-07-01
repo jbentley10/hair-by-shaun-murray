@@ -1,51 +1,47 @@
-import Link from "next/link";
-import { Facebook, Star, Instagram } from "lucide-react";
+import Link from "next/link"
+import { Facebook, Star, Instagram } from "lucide-react"
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2d2d2d] px-6 py-12 border-t-4 border-[#ffffff]">
+    <footer className="bg-black px-6 py-16">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Logo */}
           <div className="flex flex-col">
-            <h2 className="logo-text text-[#ffffff] text-5xl md:text-6xl font-bold leading-none">
-              hair
-            </h2>
-            <div className="flex items-center gap-2 mt-1">
-              <span className="text-[#ffffff] text-sm font-light">by</span>
-              <span className="text-[#ffffff] text-lg font-light tracking-wide">
-                Shaun Murray
-              </span>
+            <h2 className="logo-text text-white text-4xl md:text-5xl leading-none">hair</h2>
+            <div className="flex items-center gap-2 mt-2">
+              <span className="text-gray-400 text-xs font-light uppercase tracking-wider">by</span>
+              <span className="text-gray-400 text-sm font-light tracking-wide">Shaun Murray</span>
             </div>
           </div>
 
           {/* Right Side - Navigation, Social, Address */}
-          <div className="space-y-8">
+          <div className="space-y-12">
             {/* Navigation Menu */}
-            <nav className="flex flex-wrap gap-6 md:gap-8 justify-start lg:justify-end">
+            <nav className="flex flex-wrap gap-8 justify-start lg:justify-end">
               <Link
                 href="/services"
-                className="text-white text-lg font-semibold hover:text-[#0a2463] transition-colors duration-200"
+                className="text-gray-300 text-sm font-medium uppercase tracking-wider hover:text-white transition-colors duration-300"
               >
-                SERVICES
+                Services
               </Link>
               <Link
                 href="/about"
-                className="text-white text-lg font-semibold hover:text-[#0a2463] transition-colors duration-200"
+                className="text-gray-300 text-sm font-medium uppercase tracking-wider hover:text-white transition-colors duration-300"
               >
-                ABOUT
+                About
               </Link>
               <Link
                 href="/book"
-                className="text-white text-lg font-semibold hover:text-[#0a2463] transition-colors duration-200"
+                className="text-gray-300 text-sm font-medium uppercase tracking-wider hover:text-white transition-colors duration-300"
               >
-                BOOK NOW
+                Book Now
               </Link>
               <Link
                 href="/gallery"
-                className="text-white text-lg font-semibold hover:text-[#0a2463] transition-colors duration-200"
+                className="text-gray-300 text-sm font-medium uppercase tracking-wider hover:text-white transition-colors duration-300"
               >
-                GALLERY
+                Gallery
               </Link>
             </nav>
 
@@ -55,48 +51,48 @@ export default function Footer() {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#0a2463] transition-colors p-3 border-2 border-white hover:border-[#0a2463]"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
                 aria-label="Visit our Facebook page"
               >
-                <Facebook size={24} />
+                <Facebook size={20} />
               </Link>
               <Link
                 href="https://yelp.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#0a2463] transition-colors p-3 border-2 border-white hover:border-[#0a2463]"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
                 aria-label="Visit our Yelp page"
               >
-                <Star size={24} />
+                <Star size={20} />
               </Link>
               <Link
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-[#0a2463] transition-colors p-3 border-2 border-white hover:border-[#0a2463]"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
                 aria-label="Visit our Instagram page"
               >
-                <Instagram size={24} />
+                <Instagram size={20} />
               </Link>
             </div>
 
             {/* Address */}
-            <div className="text-white text-right">
-              <p className="text-lg font-medium">333 S Indian Canyon Dr</p>
-              <p className="text-lg font-medium">Suite J</p>
-              <p className="text-lg font-medium">Palm Springs, CA 92262</p>
+            <div className="text-gray-400 text-right">
+              <p className="text-sm font-light">333 S Indian Canyon Dr</p>
+              <p className="text-sm font-light">Suite J</p>
+              <p className="text-sm font-light">Palm Springs, CA 92262</p>
             </div>
           </div>
         </div>
 
         {/* Bottom Section - Copyright and Credits */}
-        <div className="mt-12 pt-8 border-t-2 border-[#0a2463]">
+        <div className="mt-16 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-white text-sm font-medium">Copyright 2025</p>
-            <p className="text-white text-sm font-medium">
+            <p className="text-gray-500 text-xs font-light">© 2025 Hair by Shaun Murray</p>
+            <p className="text-gray-500 text-xs font-light">
               Site by{" "}
               <Link href="https://palmspringswebdesign.net" target="_blank">
-                <span className="font-bold text-[#4753a7]">
+                <span className="text-gray-400 hover:text-white transition-colors duration-300">
                   Palm Springs Web Design
                 </span>
               </Link>
@@ -105,5 +101,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

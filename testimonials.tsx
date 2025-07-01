@@ -34,59 +34,49 @@ export default function Testimonials() {
   }
 
   return (
-    <section className="bg-[#2d2d2d] py-16 px-6">
+    <section className="bg-gray-50 py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#0a2463] text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">
-          WHAT OUR CUSTOMERS SAY
-        </h2>
+        <h2 className="text-black text-3xl md:text-4xl font-light text-center mb-16">Client Testimonials</h2>
 
         {/* Testimonial Carousel */}
         <div className="relative flex items-center justify-center">
           {/* Previous Button */}
           <button
             onClick={goToPrevious}
-            className="absolute left-0 z-10 p-4 text-white hover:text-[#0a2463] transition-colors duration-200 bg-[#2d2d2d] border-2 border-white hover:border-[#0a2463]"
+            className="absolute left-0 z-10 p-3 text-gray-400 hover:text-black transition-colors duration-300"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft size={32} />
+            <ChevronLeft size={24} />
           </button>
 
           {/* Testimonial Card */}
-          <div className="max-w-4xl mx-20">
-            <div className="relative">
-              {/* Shadow/Border Effect */}
-              <div className="absolute inset-0 bg-[#0a2463] transform translate-x-4 translate-y-4"></div>
-
-              {/* Main Card */}
-              <div className="relative bg-white p-12 md:p-16 text-center border-4 border-[#2d2d2d]">
-                <p className="text-[#2d2d2d] text-xl md:text-2xl lg:text-3xl leading-relaxed font-semibold">
-                  "{testimonials[currentIndex].text}"
-                </p>
-              </div>
+          <div className="max-w-4xl mx-16">
+            <div className="text-center">
+              <p className="text-gray-800 text-xl md:text-2xl leading-relaxed font-light italic">
+                "{testimonials[currentIndex].text}"
+              </p>
             </div>
           </div>
 
           {/* Next Button */}
           <button
             onClick={goToNext}
-            className="absolute right-0 z-10 p-4 text-white hover:text-[#0a2463] transition-colors duration-200 bg-[#2d2d2d] border-2 border-white hover:border-[#0a2463]"
+            className="absolute right-0 z-10 p-3 text-gray-400 hover:text-black transition-colors duration-300"
             aria-label="Next testimonial"
           >
-            <ChevronRight size={32} />
+            <ChevronRight size={24} />
           </button>
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center mt-8 space-x-4">
+        <div className="flex justify-center mt-12 space-x-3">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-4 h-4 transition-colors duration-200 border-2 ${
-                index === currentIndex
-                  ? "bg-[#0a2463] border-[#0a2463]"
-                  : "bg-transparent border-white hover:border-[#0a2463]"
+              className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                index === currentIndex ? "bg-black" : "bg-gray-300 hover:bg-gray-400"
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />

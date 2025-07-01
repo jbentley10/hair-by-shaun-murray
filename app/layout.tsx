@@ -1,29 +1,21 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Pacifico, Anton, Work_Sans } from "next/font/google"
+import { Playfair_Display, Inter } from "next/font/google"
 import "./globals.css"
 
-const pacifico = Pacifico({
-  weight: "400",
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
-  variable: "--font-pacifico",
+  variable: "--font-playfair",
 })
 
-const anton = Anton({
-  weight: "400",
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-anton",
-})
-
-const workSans = Work_Sans({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-work-sans",
+  variable: "--font-inter",
 })
 
 export const metadata: Metadata = {
-  title: "Hair by Shaun Murray | Bold Industrial",
-  description: "Bold hair styling and color artistry in Palm Springs",
+  title: "Hair by Shaun Murray | Luxury Hair Artistry",
+  description: "Luxury hair styling and color artistry in Palm Springs",
   generator: "v0.dev",
 }
 
@@ -34,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${pacifico.variable} ${anton.variable} ${workSans.variable}`}>{children}</body>
+      <body className={`${playfairDisplay.variable} ${inter.variable}`}>{children}</body>
     </html>
   )
 }

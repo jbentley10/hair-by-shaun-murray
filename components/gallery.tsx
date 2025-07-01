@@ -35,26 +35,20 @@ export default function Gallery() {
   ]
 
   return (
-    <section className="bg-white py-16 px-6">
+    <section className="bg-white py-20 px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-[#2d2d2d] text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-12">GALLERY SAMPLE</h2>
+        <h2 className="text-black text-3xl md:text-4xl font-light text-center mb-16">Portfolio</h2>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {galleryImages.map((image) => (
-            <div
-              key={image.id}
-              className="aspect-square bg-[#f5f5f5] overflow-hidden hover:scale-105 transition-transform duration-200 border-4 border-[#2d2d2d] relative group"
-            >
+            <div key={image.id} className="aspect-square overflow-hidden group cursor-pointer">
               <img
                 src={`/hair-${image.id}.webp?height=400&width=400&query=${encodeURIComponent(image.query)}`}
                 alt={image.alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
-
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-[#0a2463] opacity-0 group-hover:opacity-20 transition-opacity duration-200"></div>
             </div>
           ))}
         </div>
@@ -63,9 +57,9 @@ export default function Gallery() {
         <div className="text-center">
           <Link
             href="/gallery"
-            className="inline-block bg-transparent text-[#2d2d2d] px-12 py-4 text-lg font-bold border-4 border-[#2d2d2d] hover:bg-[#2d2d2d] hover:text-white transition-colors duration-200"
+            className="inline-block bg-black text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors duration-300"
           >
-            VIEW OUR GALLERY
+            View Full Gallery
           </Link>
         </div>
       </div>

@@ -23,21 +23,21 @@ export default function TwoColumnBlock({
   const hasImage = image
 
   return (
-    <section className="bg-[#f5f5f5] py-16 px-6">
+    <section className="bg-white py-20 px-6">
       <div className="max-w-7xl mx-auto">
         <div
-          className={`${hasImage ? "grid lg:grid-cols-2 gap-12 items-center" : "flex justify-center"} ${reverse ? "lg:grid-flow-col-dense" : ""}`}
+          className={`${hasImage ? "grid lg:grid-cols-2 gap-16 items-center" : "flex justify-center"} ${reverse ? "lg:grid-flow-col-dense" : ""}`}
         >
           {/* Content */}
           <div className={`space-y-8 ${reverse ? "lg:col-start-2" : ""} ${!hasImage ? "text-center max-w-4xl" : ""}`}>
-            <h1 className="text-[#2d2d2d] text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">{heading}</h1>
+            <h1 className="text-black text-3xl md:text-4xl lg:text-5xl leading-tight font-light">{heading}</h1>
 
-            <p className="text-[#666666] text-lg md:text-xl leading-relaxed max-w-lg font-medium">{bodyText}</p>
+            <p className="text-gray-600 text-lg leading-relaxed max-w-lg font-light">{bodyText}</p>
 
             {hasButton && (
               <Link
                 href={buttonLink}
-                className="inline-block bg-[#0a2463] text-white px-10 py-4 text-lg font-bold hover:bg-[#071a45] transition-colors duration-200 border-4 border-[#0a2463] hover:border-[#071a45]"
+                className="inline-block bg-black text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-gray-800 transition-colors duration-300"
               >
                 {buttonText}
               </Link>
@@ -47,13 +47,8 @@ export default function TwoColumnBlock({
           {/* Image */}
           {hasImage && (
             <div className={`relative ${reverse ? "lg:col-start-1" : ""}`}>
-              <div className="relative">
-                <div className="absolute inset-0 bg-[#0a2463] transform translate-x-8 translate-y-8"></div>
-                <img
-                  src={image || "/placeholder.svg"}
-                  alt={imageAlt}
-                  className="relative w-full h-auto object-cover border-4 border-[#2d2d2d]"
-                />
+              <div className="relative overflow-hidden">
+                <img src={image || "/placeholder.svg"} alt={imageAlt} className="w-full h-auto object-cover" />
               </div>
             </div>
           )}
