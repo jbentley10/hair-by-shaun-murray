@@ -37,7 +37,7 @@ export default function Testimonials() {
     <section className="py-20 px-6" style={{ backgroundColor: "var(--bg-secondary)" }}>
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16" style={{ color: "var(--accent-primary)" }}>
+        <h2 className="text-3xl md:text-4xl font-light text-center mb-16" style={{ color: "var(--accent-primary)" }}>
           Client Testimonials
         </h2>
 

@@ -33,7 +33,7 @@ export default function TwoColumnBlock({
           {/* Content */}
           <div className={`space-y-8 ${reverse ? "lg:col-start-2" : ""} ${!hasImage ? "text-center max-w-4xl" : ""}`}>
             <h1
-              className="text-3xl md:text-4xl lg:text-5xl leading-tight font-bold"
+              className="text-3xl md:text-4xl lg:text-5xl leading-tight font-light"
               style={{ color: "var(--accent-primary)" }}
             >
               {heading}
