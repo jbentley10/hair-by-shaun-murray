@@ -11,7 +11,7 @@ export default function Page() {
         heading="Gallery"
         bodyText="Hair artistry in Palm Springs, where style meets personalized care."
       />
-      <Gallery />
+      <Gallery hasButton={false} />
       <Footer />
     </div>
   )

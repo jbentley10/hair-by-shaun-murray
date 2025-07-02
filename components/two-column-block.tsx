@@ -4,7 +4,7 @@ import Link from "next/link"
 
 interface TwoColumnBlockProps {
   heading: string
-  bodyText: string
+  bodyText?: string
   buttonLink?: string
   buttonText?: string
   image?: string

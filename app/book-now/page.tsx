@@ -11,7 +11,7 @@ export default function Page() {
         bodyText="Easily book appointments online using our interactive agent. Prefer booking over the phone? Reach us at 
 (760) 333-3333."
       />
-      <TwoColumnBlock heading="Online Booking" bodyText="iFrame goes here" reverse={false} />
+      <TwoColumnBlock heading="Online Booking" reverse={false} />
       <iframe src="https://ronsmith.salonmonster.com/client/index.php?layout=2" width='100%' min-width='630px' style={{minHeight: 600}}></iframe>
       <Footer />
     </div>

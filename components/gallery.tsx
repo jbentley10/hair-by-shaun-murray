@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default function Gallery() {
+export default function Gallery(props: { hasButton?: boolean }) {
   const galleryImages = [
     {
       id: 1,
@@ -56,18 +56,20 @@ export default function Gallery() {
         </div>
 
         {/* Call to Action Button */}
-        <div className="text-center">
-          <Link
-            href="/gallery"
-            className="inline-block px-8 py-3 text-sm font-medium uppercase tracking-wider transition-colors duration-300"
-            style={{
-              backgroundColor: "var(--accent-primary)",
-              color: "var(--bg-primary)",
-            }}
-          >
-            View Full Gallery
-          </Link>
-        </div>
+        {props.hasButton && (
+          <div className="text-center">
+            <Link
+              href="/gallery"
+              className="inline-block px-8 py-3 text-sm font-medium uppercase tracking-wider transition-colors duration-300"
+              style={{
+                backgroundColor: "var(--accent-primary)",
+                color: "var(--bg-primary)",
+              }}
+            >
+              View Full Gallery
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   )
