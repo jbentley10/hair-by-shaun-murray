@@ -5,7 +5,7 @@ import Footer from "../../components/footer"
 
 export default function Page() {
   return (
-    <div>
+    <div data-theme="dark">
       <Header />
       <TwoColumnBlock
         heading="Gallery"
