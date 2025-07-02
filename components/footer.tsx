@@ -40,7 +40,7 @@ export default function Footer() {
                 About
               </Link>
               <Link
-                href="/book"
+                href="/book-now"
                 className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:opacity-80"
                 style={{ color: "var(--text-secondary)" }}
               >
