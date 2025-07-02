@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 
 interface TwoColumnBlockProps {
@@ -23,21 +25,38 @@ export default function TwoColumnBlock({
   const hasImage = image
 
   return (
-    <section className="bg-[#84d4db] py-20 px-6">
+    <section className="py-20 px-6" style={{ backgroundColor: "var(--bg-primary)" }}>
       <div className="max-w-7xl mx-auto">
         <div
           className={`${hasImage ? "grid lg:grid-cols-2 gap-16 items-center" : "flex justify-center"} ${reverse ? "lg:grid-flow-col-dense" : ""}`}
         >
           {/* Content */}
           <div className={`space-y-8 ${reverse ? "lg:col-start-2" : ""} ${!hasImage ? "text-center max-w-4xl" : ""}`}>
-            <h1 className="text-[#2a2a2a] text-3xl md:text-4xl lg:text-5xl leading-tight font-bold">{heading}</h1>
+            <h1
+              className="text-3xl md:text-4xl lg:text-5xl leading-tight font-bold"
+              style={{ color: "var(--accent-primary)" }}
+            >
+              {heading}
+            </h1>
 
-            <p className="text-[#1f1f1f] text-lg leading-relaxed max-w-lg font-light">{bodyText}</p>
+            <p className="text-lg leading-relaxed max-w-lg font-light" style={{ color: "var(--text-secondary)" }}>
+              {bodyText}
+            </p>
 
             {hasButton && (
               <Link
                 href={buttonLink}
-                className="inline-block bg-[#2a2a2a] text-white px-8 py-3 text-sm font-medium uppercase tracking-wider hover:bg-[#1f1f1f] transition-colors duration-300"
+                className="inline-block px-8 py-3 text-sm font-medium uppercase tracking-wider transition-colors duration-300"
+                style={{
+                  backgroundColor: "var(--accent-primary)",
+                  color: "var(--bg-primary)",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "var(--accent-secondary)"
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "var(--accent-primary)"
+                }}
               >
                 {buttonText}
               </Link>

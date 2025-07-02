@@ -2,15 +2,27 @@ import Link from "next/link"
 
 export default function Header() {
   return (
-    <header className="bg-[#84d4db] px-6 py-6 border-b border-[#6bc5cd]">
+    <header
+      className="px-6 py-6 border-b"
+      style={{
+        backgroundColor: "var(--bg-primary)",
+        borderColor: "var(--border-color)",
+      }}
+    >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo Section */}
         <div className="flex flex-col">
           <Link href="/">
-            <h1 className="logo-text text-[#2a2a2a] text-4xl md:text-5xl leading-none">hair</h1>
+            <h1 className="logo-text text-4xl md:text-5xl leading-none" style={{ color: "var(--accent-primary)" }}>
+              hair
+            </h1>
             <div className="flex items-center gap-2 mt-1">
-              <span className="text-[#1f1f1f] text-xs font-light uppercase tracking-wider">by</span>
-              <span className="text-[#333333] text-sm font-light tracking-wide">Shaun Murray</span>
+              <span className="text-xs font-light uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>
+                by
+              </span>
+              <span className="text-sm font-light tracking-wide" style={{ color: "var(--text-secondary)" }}>
+                Shaun Murray
+              </span>
             </div>
           </Link>
         </div>
@@ -19,32 +31,38 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-12">
           <Link
             href="/services"
-            className="text-[#333333] text-sm font-medium uppercase tracking-wider hover:text-[#2a2a2a] transition-colors duration-300"
+            className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:opacity-80"
+            style={{ color: "var(--text-secondary)" }}
           >
             Services
           </Link>
           <Link
             href="/about"
-            className="text-[#333333] text-sm font-medium uppercase tracking-wider hover:text-[#2a2a2a] transition-colors duration-300"
+            className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:opacity-80"
+            style={{ color: "var(--text-secondary)" }}
           >
             About
           </Link>
           <Link
             href="/book-now"
-            className="text-[#333333] text-sm font-medium uppercase tracking-wider hover:text-[#2a2a2a] transition-colors duration-300"
+            className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:opacity-80"
+            style={{ color: "var(--text-secondary)" }}
           >
             Book Now
           </Link>
           <Link
             href="/gallery"
-            className="text-[#333333] text-sm font-medium uppercase tracking-wider hover:text-[#2a2a2a] transition-colors duration-300"
+            className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:opacity-80"
+            style={{ color: "var(--text-secondary)" }}
           >
             Gallery
           </Link>
         </nav>
 
         {/* Mobile Menu Button */}
-        <button className="md:hidden text-[#2a2a2a] text-xl">☰</button>
+        <button className="md:hidden text-xl" style={{ color: "var(--text-primary)" }}>
+          ☰
+        </button>
       </div>
     </header>
   )

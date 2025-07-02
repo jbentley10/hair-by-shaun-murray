@@ -27,7 +27,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lato.variable} ${inter.variable}`}>{children}</body>
+      <body className={`${lato.variable} ${inter.variable}`} data-theme="light">
+        {children}
+      </body>
     </html>
   )
 }

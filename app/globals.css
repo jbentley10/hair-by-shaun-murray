@@ -36,44 +36,45 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-  }
-}
 
-@layer base {
+  /* Dark Theme - Black background with teal accents */
+  [data-theme="dark"] {
+    --bg-primary: #000000;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #2a2a2a;
+    --text-primary: #ffffff;
+    --text-secondary: #f5f5f5;
+    --text-muted: #cccccc;
+    --accent-primary: #bce1ed;
+    --accent-secondary: #a5d4e1;
+    --border-color: #333333;
+  }
+
+  /* Light Theme - Teal background with dark text */
+  [data-theme="light"] {
+    --bg-primary: #84d4db;
+    --bg-secondary: #7bc9d1;
+    --bg-tertiary: #6bc5cd;
+    --text-primary: #2a2a2a;
+    --text-secondary: #1f1f1f;
+    --text-muted: #333333;
+    --accent-primary: #2a2a2a;
+    --accent-secondary: #1f1f1f;
+    --border-color: #6bc5cd;
+  }
+
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-inter), sans-serif;
-    background-color: #84d4db;
-    color: #2a2a2a;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
+
   h1,
   h2,
   h3,
@@ -83,15 +84,17 @@
     font-family: var(--font-lato), sans-serif;
     font-weight: 700;
     letter-spacing: 0.02em;
-    color: #2a2a2a;
+    color: var(--accent-primary);
   }
+
   .logo-text {
     font-family: var(--font-lato), sans-serif;
     font-style: italic;
     font-weight: 400;
     letter-spacing: 0.01em;
-    color: #2a2a2a;
+    color: var(--accent-primary);
   }
+
   p,
   a,
   span,
