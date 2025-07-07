@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -27,17 +28,7 @@ export default function Header() {
         {/* Logo Section */}
         <div className="flex flex-col">
           <Link href="/" onClick={closeMobileMenu}>
-            <h1 className="logo-text text-4xl md:text-5xl leading-none" style={{ color: "var(--accent-primary)" }}>
-              hair
-            </h1>
-            <div className="flex items-center gap-2 mt-1">
-              <span className="text-xs font-light uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>
-                by
-              </span>
-              <span className="text-sm font-light tracking-wide" style={{ color: "var(--text-secondary)" }}>
-                Shaun Murray
-              </span>
-            </div>
+            <Image src="/logo.svg" alt="Hair by Shaun Murray" width={100} height={100} />
           </Link>
         </div>
 
