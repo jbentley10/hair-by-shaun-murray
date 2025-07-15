@@ -28,7 +28,7 @@ export default function Header() {
         {/* Logo Section */}
         <div className="flex flex-col">
           <Link href="/" onClick={closeMobileMenu}>
-            <Image src="/logo.svg" alt="Hair by Shaun Murray" width={100} height={100} />
+            <Image src="/logo.svg" alt="Hair by Shaun Murray" width={200} height={100} />
           </Link>
         </div>
 

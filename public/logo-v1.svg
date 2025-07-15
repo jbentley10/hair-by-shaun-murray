@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 499.83 211.47">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        font-family: ProximaNova-Semibold, 'Proxima Nova';
+        font-size: 60px;
+        font-weight: 600;
+      }
+
+      .cls-2 {
+        fill: #231f20;
+      }
+
+      .cls-2, .cls-3 {
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: .5px;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+
+      .cls-4 {
+        fill: #86d2d9;
+        font-family: Montserrat-ExtraLight, Montserrat;
+        font-size: 100px;
+        font-variation-settings: 'wght' 200;
+        font-weight: 200;
+      }
+    </style>
+  </defs>
+  <text class="cls-4" transform="translate(283.34 108.61)"><tspan x="0" y="0">ha r</tspan></text>
+  <text class="cls-1" transform="translate(18.35 170.82)"><tspan x="0" y="0">by Shaun Murray</tspan></text>
+  <g>
+    <path class="cls-3" d="M415.73,46.55l9.53,59.6s2.64,4.75,2.63,1.89-.94-6.31-.94-6.31"/>
+    <g>
+      <path class="cls-3" d="M426.85,102s1.3-1.25.84-4.14-1.72-1.49-1.98-3.03"/>
+      <path class="cls-3" d="M425.7,94.82c-.22-1.52,1.4-.6.95-3.45s-2.08-3.62-2.08-3.62"/>
+    </g>
+    <g>
+      <path class="cls-3" d="M424.59,87.89s1.3-1.25.84-4.14c-.46-2.89-1.72-1.49-1.98-3.03"/>
+      <path class="cls-3" d="M422.32,73.65s1.62.77,2.08,3.62-1.17,1.93-.95,3.45"/>
+    </g>
+    <g>
+      <path class="cls-3" d="M422.32,73.65s1.3-1.25.84-4.14-1.72-1.49-1.98-3.03"/>
+      <path class="cls-3" d="M421.17,66.47c-.22-1.52,1.4-.6.95-3.45s-2.08-3.62-2.08-3.62"/>
+    </g>
+    <g>
+      <path class="cls-3" d="M420.06,59.54s1.3-1.25.84-4.14-1.72-1.49-1.98-3.03"/>
+      <path class="cls-3" d="M417.78,45.3s1.62.77,2.08,3.62c.46,2.85-1.17,1.93-.95,3.45"/>
+    </g>
+    <ellipse class="cls-2" cx="415.68" cy="46.16" rx=".37" ry=".51" transform="translate(-2.07 66.22) rotate(-9.09)"/>
+    <ellipse class="cls-2" cx="417.77" cy="45.21" rx=".37" ry=".51" transform="translate(-1.9 66.53) rotate(-9.09)"/>
+  </g>
+  <polygon class="cls-3" points="416.18 19.42 414.15 27.57 407.17 25.98 412.93 30.85 408.56 36.16 414.15 32.71 416.11 40.12 417.84 32.54 423.7 35.99 419.51 30.79 424.94 25.98 417.74 27.45 416.18 19.42"/>
+</svg>
