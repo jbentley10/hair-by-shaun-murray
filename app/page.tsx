@@ -27,7 +27,7 @@ export default function Page() {
         reverse={true}
       />
       <Gallery hasButton={true} />
-      <Footer />
+      <Footer theme="dark" />
     </div>
   )
 }

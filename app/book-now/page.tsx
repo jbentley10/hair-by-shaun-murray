@@ -13,7 +13,7 @@ export default function Page() {
       />
       <TwoColumnBlock heading="Online Booking" reverse={false} />
       <iframe src="https://ronsmith.salonmonster.com/client/index.php?layout=2" width='100%' min-width='630px' style={{minHeight: 600}}></iframe>
-      <Footer />
+      <Footer theme="light"/>
     </div>
   )
 }

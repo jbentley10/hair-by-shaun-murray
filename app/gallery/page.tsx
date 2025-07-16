@@ -12,7 +12,7 @@ export default function Page() {
         bodyText="Hair artistry in Palm Springs, where style meets personalized care."
       />
       <Gallery hasButton={false} />
-      <Footer />
+      <Footer theme="dark"/>
     </div>
   )
 }

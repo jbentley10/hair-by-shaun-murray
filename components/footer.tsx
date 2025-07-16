@@ -1,24 +1,15 @@
 import Link from "next/link"
 import { Facebook, Star, Instagram } from "lucide-react"
+import Image from "next/image"
 
-export default function Footer() {
+export default function Footer({ theme = "light" }: { theme?: "light" | "dark" }) {
   return (
     <footer className="px-6 py-16" style={{ backgroundColor: "var(--bg-tertiary)" }}>
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Logo */}
           <div className="flex flex-col">
-            <h2 className="logo-text text-4xl md:text-5xl leading-none" style={{ color: "var(--accent-primary)" }}>
-              hair
-            </h2>
-            <div className="flex items-center gap-2 mt-2">
-              <span className="text-xs font-light uppercase tracking-wider" style={{ color: "var(--text-muted)" }}>
-                by
-              </span>
-              <span className="text-sm font-light tracking-wide" style={{ color: "var(--text-muted)" }}>
-                Shaun Murray
-              </span>
-            </div>
+            <Image src={theme == "dark" ? "/logo--white.png" : "/logo--black.png"} alt="Hair by Shaun Murray" width={200} height={100} />
           </div>
 
           {/* Right Side - Navigation, Social, Address */}

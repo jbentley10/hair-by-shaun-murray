@@ -17,7 +17,7 @@ export default function Page() {
         imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
         reverse={false}
       />
-      <Footer />
+      <Footer theme="dark"/>
     </div>
   )
 }
