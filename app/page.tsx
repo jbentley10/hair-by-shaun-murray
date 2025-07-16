@@ -7,7 +7,7 @@ import Footer from "../components/footer"
 export default function Page() {
   return (
     <div data-theme="dark">
-      <Header />
+      <Header theme="dark" />
       <TwoColumnBlock
         heading="Expert Styling for Your Signature Look"
         bodyText="Hair artistry in Palm Springs, where style meets personalized care. Experience the difference of luxury hair services tailored to your unique vision."

@@ -5,7 +5,7 @@ import Footer from "../../components/footer"
 export default function Page() {
   return (
     <div data-theme="light">
-      <Header />
+      <Header theme="light"/>
       <TwoColumnBlock
         heading="Book an appointment"
         bodyText="Easily book appointments online using our interactive agent. Prefer booking over the phone? Reach us at 

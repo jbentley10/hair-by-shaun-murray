@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 
-export default function Header() {
+export default function Header({ theme = "light" }: { theme?: "light" | "dark" }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const toggleMobileMenu = () => {
@@ -28,7 +28,7 @@ export default function Header() {
         {/* Logo Section */}
         <div className="flex flex-col">
           <Link href="/" onClick={closeMobileMenu}>
-            <Image src="/logo.png" alt="Hair by Shaun Murray" width={200} height={100} />
+            <Image src={theme == "dark" ? "/logo--white.png" : "/logo.png"} alt="Hair by Shaun Murray" width={200} height={100} />
           </Link>
         </div>
 
