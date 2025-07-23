@@ -6,7 +6,7 @@ export default function Page() {
   const hairBodyText = `
   <div>
     <h2>Haircuts</h2>
-    <ul>
+    <ul style="list-style: disc; margin: 2rem 0 2rem 2rem;">
       <li>Short Hair: $60+</li>
       <li>Long Hair: $90+</li>
       <li>Clipper cut / Buzz cut: $50+</li>
@@ -15,7 +15,7 @@ export default function Page() {
       <li>Note: Add beard trim on for $20</li>
     </ul>
     <h2>Color</h2>
-    <ul>
+    <ul style="list-style: disc; margin: 2rem 0 2rem 2rem;">
       <li>Single-process color (roots only): $100+</li>
       <li>Partial highlight: $120+</li>
       <li>Full highlight: $200+</li>
@@ -27,7 +27,7 @@ export default function Page() {
       <li>+ Glaze / Toner / Base Break $50</li>
     </ul>
     <h2>Combinations</h2>
-    <ul>
+    <ul style="list-style: disc; margin: 2rem 0 2rem 2rem;">
     <li>Short color + cut: $120+</li>
     <li>Bleach + tone: $140</li>
     <li>Color correction (based on consultation): $100/hr</li>
@@ -36,7 +36,7 @@ export default function Page() {
 
   const treatmentsBodyText = `
   <div>    
-    <ul>
+    <ul style="list-style: disc; margin: 2rem 0 2rem 2rem;">
       <li>Keratin complex smoothing treatment (3-5 months for results): $300+</li>
       <li>Express blowout: $150+</li>
       <li>Protein repair treatment: $50</li>
@@ -49,7 +49,7 @@ export default function Page() {
 
   const stylingBodyText = `
   <div>    
-    <ul>
+    <ul style="list-style: disc; margin: 2rem 0 2rem 2rem;">
       <li>Blowout (with shampoo + conditioner blow dry): $75</li>
       <li>Blowout (with shampoo + conditioner blow dry) with Iron finish: $150</li>
       <li>Formal blowout (whole head curl/pin curl) (with shampoo + conditioner blow dry) with Iron finish: $150+</li>
