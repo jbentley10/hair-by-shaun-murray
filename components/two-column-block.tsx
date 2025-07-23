@@ -1,10 +1,11 @@
 "use client"
 
 import Link from "next/link"
+import { ReactNode } from "react"
 
 interface TwoColumnBlockProps {
   heading: string
-  bodyText?: string
+  bodyText?: string | ReactNode
   buttonLink?: string
   buttonText?: string
   image?: string
@@ -39,9 +40,13 @@ export default function TwoColumnBlock({
               {heading}
             </h1>
 
-            <p className="text-lg leading-relaxed max-w-lg font-light" style={{ color: "var(--text-secondary)" }}>
-              {bodyText}
-            </p>
+            <div className="text-lg leading-relaxed max-w-lg font-light" style={{ color: "var(--text-secondary)" }}>
+              {typeof bodyText === 'string' ? (
+                <div dangerouslySetInnerHTML={{ __html: bodyText }} />
+              ) : (
+                bodyText
+              )}
+            </div>
 
             {hasButton && (
               <Link
