@@ -1,20 +1,24 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
-import Image from "next/image"
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
-export default function Header({ theme = "light" }: { theme?: "light" | "dark" }) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+export default function Header({
+  theme = "light",
+}: {
+  theme?: "light" | "dark";
+}) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false)
-  }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <header
@@ -28,19 +32,17 @@ export default function Header({ theme = "light" }: { theme?: "light" | "dark" }
         {/* Logo Section */}
         <div className="flex flex-col">
           <Link href="/" onClick={closeMobileMenu}>
-            <Image src={theme == "dark" ? "/logo--white.png" : "/logo--black.png"} alt="Hair by Shaun Murray" width={200} height={100} />
+            <Image
+              src={theme == "dark" ? "/logo--white.png" : "/logo--black.png"}
+              alt="Hair by Shaun Murray"
+              width={200}
+              height={100}
+            />
           </Link>
         </div>
 
         {/* Desktop Navigation Menu */}
         <nav className="hidden md:flex items-center gap-12">
-          <Link
-            href="/services"
-            className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:opacity-80"
-            style={{ color: "var(--text-secondary)" }}
-          >
-            Services
-          </Link>
           <Link
             href="/about"
             className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:opacity-80"
@@ -49,11 +51,11 @@ export default function Header({ theme = "light" }: { theme?: "light" | "dark" }
             About
           </Link>
           <Link
-            href="/book-now"
+            href="/services"
             className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:opacity-80"
             style={{ color: "var(--text-secondary)" }}
           >
-            Book Now
+            Services
           </Link>
           <Link
             href="/gallery"
@@ -61,6 +63,13 @@ export default function Header({ theme = "light" }: { theme?: "light" | "dark" }
             style={{ color: "var(--text-secondary)" }}
           >
             Gallery
+          </Link>
+          <Link
+            href="/book-now"
+            className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:opacity-80"
+            style={{ color: "var(--text-secondary)" }}
+          >
+            Book Now
           </Link>
         </nav>
 
@@ -121,5 +130,5 @@ export default function Header({ theme = "light" }: { theme?: "light" | "dark" }
         </div>
       )}
     </header>
-  )
+  );
 }
