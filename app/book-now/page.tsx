@@ -4,7 +4,7 @@ import Footer from "../../components/footer"
 
 export default function Page() {
   return (
-    <div data-theme="light">
+    <div data-theme="light" style={{backgroundColor: "#84d4db"}}>
       <Header theme="light"/>
       <TwoColumnBlock
         heading="Book an appointment"
@@ -12,7 +12,7 @@ export default function Page() {
 (760) 333-3333."
       />
       <TwoColumnBlock heading="Online Booking" reverse={false} />
-      <iframe src="https://ronsmith.salonmonster.com/client/index.php?layout=2" width='100%' min-width='630px' style={{minHeight: 600}}></iframe>
+      <iframe src="https://hairbyshaunmurray.salonmonster.com/client/index.php?layout=2" width='100%' style={{minHeight: 600, maxWidth: 800, margin: '0 auto', marginBottom: '4rem'}}></iframe>
       <Footer theme="light"/>
     </div>
   )
