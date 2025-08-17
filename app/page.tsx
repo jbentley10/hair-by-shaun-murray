@@ -13,7 +13,7 @@ export default function Page() {
         bodyText="Hair artistry in Palm Springs, where style meets personalized care. Experience the difference of luxury hair services tailored to your unique vision."
         buttonLink="/book-now"
         buttonText="Book Your Appointment"
-        image="/hair-1.webp?height=600&width=500"
+        image="/hair-10.webp?height=600&width=500"
         imageAlt="Professional hair styling example showing a woman with beautifully styled brown hair with highlights"
       />
       <Testimonials />

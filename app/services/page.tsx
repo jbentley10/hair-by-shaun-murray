@@ -68,7 +68,7 @@ export default function Page() {
         bodyText={hairBodyText}
         buttonLink="/services"
         buttonText="Book Your Appointment"
-        image="/hair-1.webp?height=600&width=600"
+        image="/hair-10.webp?height=600&width=600"
         imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
         reverse={false}
       />
