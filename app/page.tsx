@@ -10,7 +10,7 @@ export default function Page() {
       <Header theme="dark" />
       <TwoColumnBlock
         heading="Expert Styling for Your Signature Look"
-        bodyText="Hair artistry in Palm Springs, where style meets personalized care. Experience the difference of luxury hair services tailored to your unique vision."
+        bodyText="Hair artistry in Palm Springs, where style meets personalized care. Come experience luxury hair services tailored to your unique vision."
         buttonLink="/book-now"
         buttonText="Book Your Appointment"
         image="/hair-10.webp?height=600&width=500"
