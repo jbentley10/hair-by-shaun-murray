@@ -22,7 +22,7 @@ export default function Page() {
         bodyText="Master colorists specializing in balayage, foiling, and dimensional techniques that enhance your natural beauty. We blend art and science for stunning, long-lasting results."
         buttonLink="/services"
         buttonText="Explore Services"
-        image="/hair-2.webp?height=600&width=600"
+        image="/photo-4.webp?height=600&width=600"
         imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
         reverse={true}
       />
