@@ -32,6 +32,36 @@ export default function Gallery(props: { hasButton?: boolean }) {
       alt: "Hair color - dimensional highlights",
       query: "dimensional hair highlights color work",
     },
+    {
+      id: 7,
+      alt: "Hair styling transformation - blonde highlights",
+      query: "professional hair styling blonde highlights",
+    },
+    {
+      id: 8,
+      alt: "Hair color transformation - brunette balayage",
+      query: "brunette balayage hair color transformation",
+    },
+    {
+      id: 9,
+      alt: "Hair styling - curly hair treatment",
+      query: "curly hair styling and treatment",
+    },
+    {
+      id: 10,
+      alt: "Hair color - vibrant red transformation",
+      query: "vibrant red hair color transformation",
+    },
+    {
+      id: 11,
+      alt: "Hair styling - sleek straight hair",
+      query: "sleek straight hair styling",
+    },
+    {
+      id: 12,
+      alt: "Hair color - dimensional highlights",
+      query: "dimensional hair highlights color work",
+    }
   ]
 
   return (
