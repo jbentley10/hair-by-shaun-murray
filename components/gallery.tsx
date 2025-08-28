@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export default function Gallery(props: { hasButton?: boolean }) {
+export default function Gallery(props: { hasButton?: boolean; limit?: number }) {
   const galleryImages = [
     {
       id: 1,
@@ -61,8 +61,11 @@ export default function Gallery(props: { hasButton?: boolean }) {
       id: 12,
       alt: "Hair color - dimensional highlights",
       query: "dimensional hair highlights color work",
-    }
+    },
   ]
+
+  // Use slice to limit the number of images if limit prop is provided
+  const displayImages = props.limit ? galleryImages.slice(0, props.limit) : galleryImages
 
   return (
     <section className="py-20 px-6" style={{ backgroundColor: "var(--bg-primary)" }}>
@@ -74,7 +77,7 @@ export default function Gallery(props: { hasButton?: boolean }) {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {galleryImages.map((image) => (
+          {displayImages.map((image) => (
             <div key={image.id} className="aspect-square overflow-hidden group cursor-pointer">
               <img
                 src={`/hair-${image.id}.webp?height=400&width=400&query=${encodeURIComponent(image.query)}`}

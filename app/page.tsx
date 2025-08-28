@@ -26,7 +26,7 @@ export default function Page() {
         imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
         reverse={true}
       />
-      <Gallery hasButton={true} />
+      <Gallery hasButton={true} limit={3} />
       <Footer theme="dark" />
     </div>
   )
