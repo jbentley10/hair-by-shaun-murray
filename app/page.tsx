@@ -13,8 +13,8 @@ export default function Page() {
         bodyText="Hair artistry in Palm Springs, where style meets personalized care. Come experience luxury hair services tailored to your unique vision."
         buttonLink="/book-now"
         buttonText="Book Your Appointment"
-        image="/hair-10.webp?height=600&width=500"
-        imageAlt="Professional hair styling example showing a woman with beautifully styled brown hair with highlights"
+        image="/hair-11.webp?height=600&width=600"
+        imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
       />
       <Testimonials />
       <TwoColumnBlock
@@ -22,8 +22,8 @@ export default function Page() {
         bodyText="Master colorists specializing in balayage, foiling, and dimensional techniques that enhance your natural beauty. We blend art and science for stunning, long-lasting results."
         buttonLink="/services"
         buttonText="Explore Services"
-        image="/hair-11.webp?height=600&width=600"
-        imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
+        image="/blonde-highlights.webp?height=600&width=500"
+        imageAlt="Beautiful blonde hair with professional highlights and lowlights showing expert color artistry and dimensional techniques"
         reverse={true}
       />
       <Gallery hasButton={true} limit={3} />
