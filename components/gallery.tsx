@@ -8,11 +8,6 @@ export default function Gallery(props: { hasButton?: boolean; limit?: number }) 
       query: "professional hair styling blonde highlights",
     },
     {
-      id: 4,
-      alt: "Hair color - vibrant red transformation",
-      query: "vibrant red hair color transformation",
-    },
-    {
       id: 5,
       alt: "Hair styling - sleek straight hair",
       query: "sleek straight hair styling",
@@ -21,6 +16,11 @@ export default function Gallery(props: { hasButton?: boolean; limit?: number }) 
       id: 6,
       alt: "Hair color - dimensional highlights",
       query: "dimensional hair highlights color work",
+    },
+    {
+      id: 4,
+      alt: "Hair color - vibrant red transformation",
+      query: "vibrant red hair color transformation",
     },
     {
       id: 7,
@@ -51,7 +51,43 @@ export default function Gallery(props: { hasButton?: boolean; limit?: number }) 
       id: 12,
       alt: "Hair color - dimensional highlights",
       query: "dimensional hair highlights color work",
+    },
+    {
+      id: 13,
+      alt: "Hair color - solid color",
+      query: "solid color hair color work",
+    },
+    {
+      id: 14,
+      alt: "Hair color - blue color",
+      query: "unnatural blue color work",
+    },
+    {
+      id: 15,
+      alt: "Hair color - dimensional highlights",
+      query: "dimensional hair highlights color work",
+    },
+    {
+      id: 16,
+      alt: "Hair color - dimensional highlights",
+      query: "dimensional hair highlights color work",
+    },
+    {
+      id: 17,
+      alt: "Hair color - dimensional highlights",
+      query: "dimensional hair highlights color work",
+    },
+    {
+      id: 18,
+      alt: "Hair color - dimensional highlights",
+      query: "dimensional hair highlights color work",
+    },
+    {
+      id: 19,
+      alt: "Hair color - dimensional highlights",
+      query: "dimensional hair highlights color work",
     }
+    
   ]
 
   // Use slice to limit the number of images if limit prop is provided
