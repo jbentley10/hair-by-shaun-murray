@@ -35,9 +35,9 @@ export default function Header({
             <Image
               src="/logo.png"
               alt="Hair by Shaun Murray - Cut and Color Specialists"
-              width={180}
-              height={180}
-              className="w-auto h-16 md:h-20"
+              width={240}
+              height={240}
+              className="w-auto h-24 md:h-28"
             />
           </Link>
         </div>
