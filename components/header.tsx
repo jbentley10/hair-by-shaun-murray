@@ -37,7 +37,7 @@ export default function Header({
               alt="Hair by Shaun Murray - Cut and Color Specialists"
               width={420}
               height={420}
-              className="w-auto h-24 md:h-32"
+              className="w-auto h-24 md:h-42"
             />
           </Link>
         </div>
