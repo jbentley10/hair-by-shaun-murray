@@ -1,24 +1,24 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import Image from "next/image";
+import Link from "next/link"
+import { useState } from "react"
+import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 export default function Header({
   theme = "light",
 }: {
-  theme?: "light" | "dark";
+  theme?: "light" | "dark"
 }) {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
 
   const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
+    setIsMobileMenuOpen(false)
+  }
 
   return (
     <header
@@ -33,10 +33,11 @@ export default function Header({
         <div className="flex flex-col">
           <Link href="/" onClick={closeMobileMenu}>
             <Image
-              src={theme == "dark" ? "/logo--white.png" : "/logo--black.png"}
-              alt="Hair by Shaun Murray"
-              width={200}
-              height={100}
+              src="/logo.png"
+              alt="Hair by Shaun Murray - Cut and Color Specialists"
+              width={180}
+              height={180}
+              className="w-auto h-16 md:h-20"
             />
           </Link>
         </div>
@@ -130,5 +131,5 @@ export default function Header({
         </div>
       )}
     </header>
-  );
+  )
 }

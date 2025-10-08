@@ -4,8 +4,8 @@ import Footer from "../../components/footer"
 
 export default function Page() {
   return (
-    <div data-theme="dark">
-      <Header theme="dark"/>
+    <div data-theme="light">
+      <Header theme="light" />
       <TwoColumnBlock
         heading="Hair artistry for 20 years"
         bodyText="Hair artistry in Palm Springs, where style meets personalized care."
@@ -17,7 +17,7 @@ export default function Page() {
         imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
         reverse={false}
       />
-      <Footer theme="dark"/>
+      <Footer theme="light" />
     </div>
   )
 }
