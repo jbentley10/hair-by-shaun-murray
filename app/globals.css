@@ -52,7 +52,8 @@
 
   /* Light Theme - Cream background with warm brown accents */
   [data-theme="light"] {
-    --bg-primary: #f5f1e8;
+    /* Updated background color to #f8f5f1 */
+    --bg-primary: #f8f5f1;
     --bg-secondary: #ffffff;
     --bg-tertiary: #faf8f3;
     --text-primary: #1a1a1a;
