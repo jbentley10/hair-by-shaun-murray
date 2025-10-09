@@ -15,6 +15,7 @@ export default function Page() {
         buttonText="Book Your Appointment"
         image="/hair-11.webp?height=600&width=600"
         imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
+        hero={true}
       />
       <Testimonials />
       <TwoColumnBlock

@@ -17,7 +17,7 @@ export default function Footer({
           {/* Left Side - Logo */}
           <div className="flex flex-col">
             <Image
-              src={theme == "dark" ? "/logo--white.png" : "/logo--black.png"}
+              src={theme == "dark" ? "/logo.webp" : "/logo.webp"}
               alt="Hair by Shaun Murray"
               width={200}
               height={100}

@@ -33,7 +33,7 @@ export default function Header({
         <div className="flex flex-col">
           <Link href="/" onClick={closeMobileMenu}>
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Hair by Shaun Murray - Cut and Color Specialists"
               width={420}
               height={420}

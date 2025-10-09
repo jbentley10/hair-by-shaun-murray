@@ -10,7 +10,8 @@ interface TwoColumnBlockProps {
   buttonText?: string
   image?: string
   imageAlt?: string
-  reverse?: boolean
+  reverse?: boolean,
+  hero?: boolean
 }
 
 export default function TwoColumnBlock({
@@ -21,6 +22,7 @@ export default function TwoColumnBlock({
   image,
   imageAlt = "",
   reverse = false,
+  hero = false
 }: TwoColumnBlockProps) {
   const hasButton = buttonLink && buttonText
   const hasImage = image
@@ -34,7 +36,7 @@ export default function TwoColumnBlock({
           {/* Content */}
           <div className={`space-y-8 ${reverse ? "lg:col-start-2" : ""} ${!hasImage ? "text-center max-w-4xl" : ""}`}>
             <h1
-              className="text-3xl md:text-4xl lg:text-5xl leading-tight font-light"
+              className={`${hero ? "text-6xl lg:text-7xl" : "text-3xl md:text-4xl lg:text-5xl"} leading-tight font-light`}
               style={{ color: "var(--accent-primary)" }}
             >
               {heading}

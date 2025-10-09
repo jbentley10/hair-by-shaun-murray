@@ -8,15 +8,15 @@ export default function Page() {
       <Header theme="light" />
       <TwoColumnBlock
         heading="Book an appointment"
-        bodyText="Easily book appointments online using our interactive agent. Prefer booking over the phone? Reach us at 
+        bodyText="Book your appointment over the phone at 
 (760) 333-3333."
       />
-      <TwoColumnBlock heading="Online Booking" reverse={false} />
-      <iframe
+      {/* <TwoColumnBlock heading="Online Booking" reverse={false} /> */}
+      {/* <iframe
         src="https://hairbyshaunmurray.salonmonster.com/client/index.php?layout=2"
         width="100%"
         style={{ minHeight: 600, maxWidth: 800, margin: "0 auto", marginBottom: "4rem" }}
-      ></iframe>
+      ></iframe> */}
       <Footer theme="light" />
     </div>
   )
