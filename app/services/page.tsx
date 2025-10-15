@@ -12,19 +12,18 @@ export default function Page() {
       <li>Clipper cut / Buzz cut: $50+</li>
       <li>Beard trim: $40</li>
       <li>Bang face frame: $40</li>
-      <li>Note: Add beard trim on for $20</li>
+      <li>Beard trim add-on: $20</li>
     </ul>
     <h2>Color</h2>
     <ul style="list-style: disc; margin: 2rem 0 2rem 2rem;">
-      <li>Single-process color (roots only): $100+</li>
+      <li>Single-process color (roots only): $90+</li>
       <li>Partial highlight: $120+</li>
       <li>Full highlight: $200+</li>
       <li>Full color (roots to ends): $150+</li>
       <li>Balayage: $240+</li>
-      <li>Toner: $65+</li>
       <li>Mini Foil $80</li>
       <li>+ Additional Color $35</li>
-      <li>+ Glaze / Toner / Base Break $50</li>
+      <li>+ Glaze / Toner / Base Break $65</li>
     </ul>
     <h2>Combinations</h2>
     <ul style="list-style: disc; margin: 2rem 0 2rem 2rem;">
