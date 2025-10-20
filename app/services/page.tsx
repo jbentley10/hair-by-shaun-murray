@@ -5,31 +5,35 @@ import Footer from "../../components/footer"
 export default function Page() {
   const hairBodyText = `
   <div>
+    <span>A La Carte</span>
     <h2>Haircuts</h2>
     <ul style="list-style: disc; margin: 2rem 0 2rem 2rem;">
-      <li>Short Hair: $60+</li>
-      <li>Long Hair: $90+</li>
-      <li>Clipper cut / Buzz cut: $50+</li>
-      <li>Beard trim: $40</li>
-      <li>Bang face frame: $40</li>
-      <li>Beard trim add-on: $20</li>
+      <li>Short / Precision / Fade cut $65+</li>
+      <li>Long / Medium cut $90+</li>
+      <li>Transformative cut $100+</li>
+      <li>Clipper cut / Buzz cut $50+</li>
+      <li>Beard trim $40</li>
+      <li>Bang face frame $40</li>
+      <li>Beard trim add-on $20</li>
     </ul>
     <h2>Color</h2>
     <ul style="list-style: disc; margin: 2rem 0 2rem 2rem;">
       <li>Single-process color (roots only): $90+</li>
-      <li>Partial highlight: $120+</li>
-      <li>Full highlight: $200+</li>
+      <li>Partial highlight $120+</li>
+      <li>Full highlight $200+</li>
       <li>Full color (roots to ends): $150+</li>
-      <li>Balayage: $240+</li>
+      <li>Balayage $240+</li>
       <li>Mini Foil $80</li>
       <li>+ Additional Color $35</li>
       <li>+ Glaze / Toner / Base Break $65</li>
     </ul>
-    <h2>Combinations</h2>
+    <h2>Waxing</h2>
     <ul style="list-style: disc; margin: 2rem 0 2rem 2rem;">
-    <li>Short color + cut: $120+</li>
-    <li>Bleach + tone: $140</li>
-    <li>Color correction (based on consultation): $100/hr</li>
+    <li>Eyebrow $35</li>
+    <li>Lip $35</li>
+    <li>Chin $35</li>
+    <li>Whole Face $75</li>
+    <li>For other areas, please request a consultation</li>
     </ul>
   </div>`;
 
@@ -63,7 +67,7 @@ export default function Page() {
         bodyText="Hair artistry in Palm Springs, where style meets personalized care."
       />
       <TwoColumnBlock
-        heading="Haircuts"
+        heading="Service Menu"
         bodyText={hairBodyText}
         buttonLink="/services"
         buttonText="Book Your Appointment"
