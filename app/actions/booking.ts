@@ -57,8 +57,10 @@ export async function submitBookingForm(formData: FormData) {
 }
 
 async function sendEmailNotification(submission: any) {
-  // Email sending logic using Resend API
-  // Note: You'll need to add RESEND_API_KEY to your environment variables
+  if (!process.env.RESEND_API_KEY || process.env.RESEND_API_KEY === "") {
+    console.log("[v0] Skipping email notification - RESEND_API_KEY not configured")
+    return
+  }
 
   const emailBody = `
 New Booking Request
