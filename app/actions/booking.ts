@@ -3,8 +3,8 @@
 import { Redis } from "@upstash/redis"
 
 const redis = new Redis({
-  url: process.env.KV_REST_API_URL!,
-  token: process.env.KV_REST_API_TOKEN!,
+  url: process.env["UPSTASH-KV_KV_REST_API_URL"]!,
+  token: process.env["UPSTASH-KV_KV_REST_API_TOKEN"]!,
 })
 
 // Update this email address to where you want to receive booking notifications
