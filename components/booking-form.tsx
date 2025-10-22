@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -15,6 +15,7 @@ export default function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [selectedServices, setSelectedServices] = useState<string[]>([])
+  const formRef = useRef<HTMLFormElement>(null)
 
   const services = [
     "Looking for a new stylist",
@@ -41,7 +42,7 @@ export default function BookingForm() {
       const result = await submitBookingForm(formData)
       if (result.success) {
         setSubmitStatus("success")
-        e.currentTarget.reset()
+        formRef.current?.reset()
         setSelectedServices([])
       } else {
         setSubmitStatus("error")
@@ -56,7 +57,7 @@ export default function BookingForm() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-12">
-      <form onSubmit={handleSubmit} className="space-y-8">
+      <form ref={formRef} onSubmit={handleSubmit} className="space-y-8">
         {/* Name Fields */}
         <div className="grid gap-6 md:grid-cols-2">
           <div className="space-y-2">
