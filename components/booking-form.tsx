@@ -10,12 +10,20 @@ import { Textarea } from "@/components/ui/textarea"
 import { Checkbox } from "@/components/ui/checkbox"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { submitBookingForm } from "@/app/actions/booking"
+import imageCompression from "browser-image-compression"
 
 export default function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
   const [selectedServices, setSelectedServices] = useState<string[]>([])
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([])
+  const [totalFileSize, setTotalFileSize] = useState(0)
+  const [isCompressing, setIsCompressing] = useState(false)
+  const [sizeWarning, setSizeWarning] = useState("")
   const formRef = useRef<HTMLFormElement>(null)
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
+  const MAX_TOTAL_SIZE = 1024 * 1024 // 1MB in bytes
 
   const services = [
     "Looking for a new stylist",
@@ -30,13 +38,115 @@ export default function BookingForm() {
     setSelectedServices((prev) => (prev.includes(service) ? prev.filter((s) => s !== service) : [...prev, service]))
   }
 
+  const calculateTotalSize = (files: File[]) => {
+    return files.reduce((total, file) => total + file.size, 0)
+  }
+
+  const compressImage = async (file: File): Promise<File> => {
+    const options = {
+      maxSizeMB: 0.5, // Target 500KB per image
+      maxWidthOrHeight: 1920,
+      useWebWorker: true,
+    }
+
+    try {
+      const compressedBlob = await imageCompression(file, options)
+
+      // Create a new File object with the original filename and type to preserve them
+      const compressedFile = new File([compressedBlob], file.name, {
+        type: file.type,
+        lastModified: Date.now(),
+      })
+
+      return compressedFile
+    } catch (error) {
+      console.error("Error compressing image:", error)
+      return file // Return original if compression fails
+    }
+  }
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files
+    if (!files || files.length === 0) return
+
+    setIsCompressing(true)
+    setSizeWarning("")
+
+    // Only accept JPEG and PNG images for better compatibility
+    const imageFiles = Array.from(files).filter((file) =>
+      file.type === "image/jpeg" || file.type === "image/png" || file.type === "image/jpg"
+    )
+
+    // Show warning if any files were rejected
+    if (imageFiles.length < files.length) {
+      setSizeWarning("Only PNG and JPEG/JPG images are supported. Other file types have been excluded.")
+    }
+
+    // Compress images
+    const compressedFiles: File[] = []
+    for (const file of imageFiles) {
+      const compressed = await compressImage(file)
+      compressedFiles.push(compressed)
+    }
+
+    // Check total size with new files
+    const potentialFiles = [...selectedFiles, ...compressedFiles]
+    const potentialTotalSize = calculateTotalSize(potentialFiles)
+
+    if (potentialTotalSize > MAX_TOTAL_SIZE) {
+      setSizeWarning(
+        `Total file size would exceed 1MB limit (${(potentialTotalSize / 1024 / 1024).toFixed(2)}MB). Please remove some files or select smaller images.`
+      )
+      setIsCompressing(false)
+      if (fileInputRef.current) {
+        fileInputRef.current.value = ""
+      }
+      return
+    }
+
+    setSelectedFiles(potentialFiles)
+    setTotalFileSize(potentialTotalSize)
+
+    // Check if approaching limit (80% threshold)
+    if (potentialTotalSize > MAX_TOTAL_SIZE * 0.8) {
+      setSizeWarning(
+        `You're approaching the 1MB limit (${(potentialTotalSize / 1024 / 1024).toFixed(2)}MB used). Consider removing files if you need to add more.`
+      )
+    }
+
+    setIsCompressing(false)
+
+    // Reset input so the same file can be selected again if needed
+    if (fileInputRef.current) {
+      fileInputRef.current.value = ""
+    }
+  }
+
+  const handleRemoveFile = (index: number) => {
+    const newFiles = selectedFiles.filter((_, i) => i !== index)
+    setSelectedFiles(newFiles)
+    const newTotalSize = calculateTotalSize(newFiles)
+    setTotalFileSize(newTotalSize)
+
+    // Clear warning if we're back under the limit
+    if (newTotalSize <= MAX_TOTAL_SIZE * 0.8) {
+      setSizeWarning("")
+    }
+  }
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmitStatus("idle")
+    setSizeWarning("")
 
     const formData = new FormData(e.currentTarget)
     formData.append("services", selectedServices.join(", "))
+
+    // Add all selected files to the form data
+    selectedFiles.forEach((file) => {
+      formData.append("photos", file)
+    })
 
     try {
       const result = await submitBookingForm(formData)
@@ -44,8 +154,14 @@ export default function BookingForm() {
         setSubmitStatus("success")
         formRef.current?.reset()
         setSelectedServices([])
+        setSelectedFiles([])
+        setTotalFileSize(0)
       } else {
         setSubmitStatus("error")
+        // Show server error as warning if it's about file size
+        if (result.error && result.error.includes("file size")) {
+          setSizeWarning(result.error)
+        }
       }
     } catch (error) {
       console.error("[v0] Form submission error:", error)
@@ -224,12 +340,102 @@ export default function BookingForm() {
         </div>
 
         {/* Photo Upload */}
-        <div className="space-y-2">
+        <div className="space-y-3">
           <Label htmlFor="photos" className="text-base">
             Please upload a current picture of your hair, along with any inspiration
           </Label>
-          <Input id="photos" name="photos" type="file" accept="image/*" multiple className="h-12 cursor-pointer" />
-          <p className="text-sm text-muted-foreground">You can upload up to 3 images</p>
+          <div>
+            <Input
+              ref={fileInputRef}
+              id="photos"
+              type="file"
+              accept="image/png,image/jpeg,image/jpg"
+              multiple
+              onChange={handleFileChange}
+              disabled={isCompressing}
+              className="h-12 cursor-pointer"
+            />
+            <div className="mt-2 space-y-1">
+              <p className="text-sm text-muted-foreground">
+                You can select multiple images at once. Images will be automatically compressed.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                <span className="font-medium">Note:</span> Only PNG and JPEG/JPG formats are accepted. Total file size must be under 1MB for email delivery.
+              </p>
+            </div>
+          </div>
+
+          {/* Compression Status */}
+          {isCompressing && (
+            <div className="flex items-center gap-2 p-3 bg-blue-50 text-blue-800 rounded-md">
+              <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                />
+              </svg>
+              <span className="text-sm">Compressing images...</span>
+            </div>
+          )}
+
+          {/* Size Warning */}
+          {sizeWarning && (
+            <div className="p-3 bg-yellow-50 text-yellow-800 rounded-md">
+              <p className="text-sm">{sizeWarning}</p>
+            </div>
+          )}
+
+          {/* File List */}
+          {selectedFiles.length > 0 && (
+            <div className="space-y-2">
+              <div className="flex items-center justify-between">
+                <p className="text-sm font-medium">Selected files ({selectedFiles.length}):</p>
+                <p className="text-sm text-muted-foreground">
+                  Total: {(totalFileSize / 1024).toFixed(0)} KB / 1024 KB
+                </p>
+              </div>
+              <div className="space-y-2">
+                {selectedFiles.map((file, index) => (
+                  <div
+                    key={`${file.name}-${index}`}
+                    className="flex items-center justify-between p-3 bg-muted rounded-md"
+                  >
+                    <div className="flex items-center gap-2 flex-1 min-w-0">
+                      <svg
+                        className="w-5 h-5 text-muted-foreground flex-shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
+                        />
+                      </svg>
+                      <span className="text-sm truncate">{file.name}</span>
+                      <span className="text-xs text-muted-foreground flex-shrink-0">
+                        ({Math.round(file.size / 1024)} KB)
+                      </span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => handleRemoveFile(index)}
+                      className="ml-2 p-1 hover:bg-background rounded transition-colors flex-shrink-0"
+                      aria-label={`Remove ${file.name}`}
+                    >
+                      <svg className="w-5 h-5 text-muted-foreground hover:text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Submit Button */}

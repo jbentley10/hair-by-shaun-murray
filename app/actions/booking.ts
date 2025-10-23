@@ -16,6 +16,28 @@ export async function submitBookingForm(formData: FormData) {
     const lastAppointment = formData.get("lastAppointment") as string
     const notes = formData.get("notes") as string
 
+    // Extract file attachments
+    const files: File[] = []
+    const photoFiles = formData.getAll("photos")
+    let totalSize = 0
+    const MAX_TOTAL_SIZE = 1024 * 1024 // 1MB
+
+    for (const file of photoFiles) {
+      if (file instanceof File && file.size > 0) {
+        files.push(file)
+        totalSize += file.size
+      }
+    }
+
+    // Validate total file size
+    if (totalSize > MAX_TOTAL_SIZE) {
+      console.error("[v0] Total file size exceeds 1MB limit:", totalSize)
+      return {
+        success: false,
+        error: `Total file size (${(totalSize / 1024 / 1024).toFixed(2)}MB) exceeds 1MB limit. Please reduce the number or size of files.`,
+      }
+    }
+
     // Create submission object
     const submission = {
       firstName,
@@ -28,6 +50,7 @@ export async function submitBookingForm(formData: FormData) {
       lastAppointment,
       notes,
       submittedAt: new Date().toISOString(),
+      files,
     }
 
     // Send email notification
@@ -67,25 +90,39 @@ async function sendEmailNotification(submission: any) {
   `
 
   try {
+    // Convert files to base64 for Resend API
+    const attachments = []
+    if (submission.files && submission.files.length > 0) {
+      for (const file of submission.files) {
+        const arrayBuffer = await file.arrayBuffer()
+        const base64 = Buffer.from(arrayBuffer).toString("base64")
+        attachments.push({
+          content: base64,
+          filename: file.name,
+        })
+      }
+    }
+
     // Using Resend for email sending
+    const emailPayload: any = {
+      from: "Hair by Shaun Murray <bookings@hairbyshaunmurray.com>",
+      to: [NOTIFICATION_EMAIL],
+      subject: `New Booking Request from ${submission.firstName} ${submission.lastName}`,
+      text: emailBody,
+    }
+
+    // Only add attachments if there are any
+    if (attachments.length > 0) {
+      emailPayload.attachments = attachments
+    }
+
     const response = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
       },
-      body: JSON.stringify({
-        from: "Hair by Shaun Murray <bookings@hairbyshaunmurray.com>",
-        to: [NOTIFICATION_EMAIL],
-        subject: `New Booking Request from ${submission.firstName} ${submission.lastName}`,
-        text: emailBody,
-        attachments: [
-          {
-            content: attachment,
-            filename: 'invoice.pdf',
-          },
-        ],
-      }),
+      body: JSON.stringify(emailPayload),
     })
 
     if (!response.ok) {
