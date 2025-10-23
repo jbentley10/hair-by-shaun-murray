@@ -1,14 +1,7 @@
 "use server"
 
-import { Redis } from "@upstash/redis"
-
-const redis = new Redis({
-  url: process.env.UPSTASH_KV_KV_REST_API_URL!,
-  token: process.env.UPSTASH_KV_KV_REST_API_TOKEN!,
-})
-
 // Update this email address to where you want to receive booking notifications
-const NOTIFICATION_EMAIL = "shaun@hairbyshaunmurray.com"
+const NOTIFICATION_EMAIL = "shaunmurray77@gmail.com"
 
 export async function submitBookingForm(formData: FormData) {
   try {
@@ -37,19 +30,10 @@ export async function submitBookingForm(formData: FormData) {
       submittedAt: new Date().toISOString(),
     }
 
-    // Generate unique ID for this submission
-    const submissionId = `booking:${Date.now()}:${Math.random().toString(36).substring(7)}`
-
-    // Store in Redis
-    await redis.set(submissionId, JSON.stringify(submission))
-
-    // Also add to a list for easy retrieval
-    await redis.lpush("booking:submissions", submissionId)
-
     // Send email notification
     await sendEmailNotification(submission)
 
-    return { success: true, submissionId }
+    return { success: true }
   } catch (error) {
     console.error("[v0] Error submitting booking form:", error)
     return { success: false, error: "Failed to submit form" }
