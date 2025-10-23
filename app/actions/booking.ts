@@ -1,7 +1,7 @@
 "use server"
 
 // Update this email address to where you want to receive booking notifications
-const NOTIFICATION_EMAIL = "shaunmurray77@gmail.com"
+const NOTIFICATION_EMAIL = "jwbentle@gmail.com"
 
 export async function submitBookingForm(formData: FormData) {
   try {
@@ -47,23 +47,23 @@ async function sendEmailNotification(submission: any) {
   }
 
   const emailBody = `
-New Booking Request
+    New Booking Request
 
-Name: ${submission.firstName} ${submission.lastName}
-Phone: ${submission.phone || "Not provided"}
+    Name: ${submission.firstName} ${submission.lastName}
+    Phone: ${submission.phone || "Not provided"}
 
-Services Requested: ${submission.services}
+    Services Requested: ${submission.services}
 
-Hair Details:
-- Length: ${submission.hairLength || "Not specified"}
-- Density: ${submission.hairDensity || "Not specified"}
-- Texture: ${submission.hairTexture || "Not specified"}
-- Last Appointment: ${submission.lastAppointment || "Not specified"}
+    Hair Details:
+    - Length: ${submission.hairLength || "Not specified"}
+    - Density: ${submission.hairDensity || "Not specified"}
+    - Texture: ${submission.hairTexture || "Not specified"}
+    - Last Appointment: ${submission.lastAppointment || "Not specified"}
 
-Additional Notes:
-${submission.notes || "None"}
+    Additional Notes:
+    ${submission.notes || "None"}
 
-Submitted: ${new Date(submission.submittedAt).toLocaleString()}
+    Submitted: ${new Date(submission.submittedAt).toLocaleString()}
   `
 
   try {
@@ -79,6 +79,12 @@ Submitted: ${new Date(submission.submittedAt).toLocaleString()}
         to: [NOTIFICATION_EMAIL],
         subject: `New Booking Request from ${submission.firstName} ${submission.lastName}`,
         text: emailBody,
+        attachments: [
+          {
+            content: attachment,
+            filename: 'invoice.pdf',
+          },
+        ],
       }),
     })
 
