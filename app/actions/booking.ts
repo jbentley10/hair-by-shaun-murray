@@ -1,7 +1,7 @@
 "use server"
 
 // Update this email address to where you want to receive booking notifications
-const NOTIFICATION_EMAIL = "shaunmurray77@gmail.com"
+const NOTIFICATION_EMAIL = "shaunmurrayhair@gmail.com"
 
 export async function submitBookingForm(formData: FormData) {
   try {

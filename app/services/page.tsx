@@ -18,12 +18,12 @@ export default function Page() {
     </ul>
     <h2>Color</h2>
     <ul style="list-style: disc; margin: 2rem 0 2rem 2rem;">
-      <li>Single-process color (roots only): $90+</li>
-      <li>Partial highlight $120+</li>
-      <li>Full highlight $200+</li>
-      <li>Full color (roots to ends): $150+</li>
+      <li>Single-process color (roots only) $90+</li>
+      <li>Partial foil and highlight $120+</li>
+      <li>Full foil and highlight $200+</li>
+      <li>Full color (roots to ends) $150+</li>
       <li>Balayage $240+</li>
-      <li>Mini Foil $80</li>
+      <li>Mini foil and highlight $80</li>
       <li>+ Additional Color $35</li>
       <li>+ Glaze / Toner / Base Break $65</li>
     </ul>

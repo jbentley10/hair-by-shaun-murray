@@ -20,7 +20,7 @@ export default function Page() {
 
         <div className="text-center mt-12 pt-8 border-t">
           <p className="text-lg mb-2">Prefer to book over the phone?</p>
-          <p className="text-2xl font-semibold">Call us at (760) 333-3333</p>
+          <p className="text-2xl font-semibold">Call us at (909) 588-4977</p>
         </div>
       </div>
 
