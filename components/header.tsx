@@ -96,14 +96,6 @@ export default function Header({
         >
           <nav className="flex flex-col px-6 py-4 space-y-4">
             <Link
-              href="/services"
-              className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:opacity-80 py-2"
-              style={{ color: "var(--text-secondary)" }}
-              onClick={closeMobileMenu}
-            >
-              Services
-            </Link>
-            <Link
               href="/about"
               className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:opacity-80 py-2"
               style={{ color: "var(--text-secondary)" }}
@@ -112,12 +104,12 @@ export default function Header({
               About
             </Link>
             <Link
-              href="/book-now"
+              href="/services"
               className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:opacity-80 py-2"
               style={{ color: "var(--text-secondary)" }}
               onClick={closeMobileMenu}
             >
-              Book Now
+              Services
             </Link>
             <Link
               href="/gallery"
@@ -126,6 +118,14 @@ export default function Header({
               onClick={closeMobileMenu}
             >
               Gallery
+            </Link>
+            <Link
+              href="/book-now"
+              className="text-sm font-medium uppercase tracking-wider transition-colors duration-300 hover:opacity-80 py-2"
+              style={{ color: "var(--text-secondary)" }}
+              onClick={closeMobileMenu}
+            >
+              Book Now
             </Link>
           </nav>
         </div>
