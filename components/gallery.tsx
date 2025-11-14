@@ -1,6 +1,12 @@
-import Link from "next/link"
+"use client"
 
-export default function Gallery(props: { hasButton?: boolean; limit?: number }) {
+import Link from "next/link"
+import { useState, useEffect } from "react"
+
+export default function Gallery(props: { hasButton?: boolean; limit?: number; isGrid?: boolean }) {
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   const galleryImages = [
     {
       id: 1,
@@ -67,6 +73,48 @@ export default function Gallery(props: { hasButton?: boolean; limit?: number }) 
   // Use slice to limit the number of images if limit prop is provided
   const displayImages = props.limit ? galleryImages.slice(0, props.limit) : galleryImages
 
+  const openModal = (index: number) => {
+    if (props.isGrid) {
+      setSelectedImageIndex(index)
+      setIsModalOpen(true)
+    }
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false)
+    setSelectedImageIndex(null)
+  }
+
+  const navigateNext = () => {
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex((selectedImageIndex + 1) % displayImages.length)
+    }
+  }
+
+  const navigatePrev = () => {
+    if (selectedImageIndex !== null) {
+      setSelectedImageIndex((selectedImageIndex - 1 + displayImages.length) % displayImages.length)
+    }
+  }
+
+  // Keyboard navigation
+  useEffect(() => {
+    if (!isModalOpen) return
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        closeModal()
+      } else if (e.key === "ArrowRight") {
+        navigateNext()
+      } else if (e.key === "ArrowLeft") {
+        navigatePrev()
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown)
+    return () => window.removeEventListener("keydown", handleKeyDown)
+  }, [isModalOpen, selectedImageIndex])
+
   return (
     <section className="py-20 px-6" style={{ backgroundColor: "var(--bg-primary)" }}>
       <div className="max-w-6xl mx-auto">
@@ -76,9 +124,13 @@ export default function Gallery(props: { hasButton?: boolean; limit?: number }) 
         </h2>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-          {displayImages.map((image) => (
-            <div key={image.id} className="aspect-square overflow-hidden group cursor-pointer">
+        <div className={`grid gap-8 mb-16 ${props.isGrid ? "grid-cols-3" : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}`}>
+          {displayImages.map((image, index) => (
+            <div
+              key={image.id}
+              className="aspect-square overflow-hidden group cursor-pointer"
+              onClick={() => openModal(index)}
+            >
               <img
                 src={`/hair-${image.id}.webp?height=400&width=400&query=${encodeURIComponent(image.query)}`}
                 alt={image.alt}
@@ -104,6 +156,61 @@ export default function Gallery(props: { hasButton?: boolean; limit?: number }) 
           </div>
         )}
       </div>
+
+      {/* Image Modal */}
+      {isModalOpen && selectedImageIndex !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90"
+          onClick={closeModal}
+        >
+          {/* Close Button */}
+          <button
+            onClick={closeModal}
+            className="absolute top-4 right-4 text-white text-4xl font-light hover:opacity-70 transition-opacity z-10"
+            aria-label="Close modal"
+          >
+            &times;
+          </button>
+
+          {/* Previous Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              navigatePrev()
+            }}
+            className="absolute left-4 text-white text-5xl font-light hover:opacity-70 transition-opacity z-10"
+            aria-label="Previous image"
+          >
+            &#8249;
+          </button>
+
+          {/* Image Container */}
+          <div
+            className="max-w-5xl max-h-[90vh] mx-4"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={`/hair-${displayImages[selectedImageIndex].id}.webp?height=1200&width=1200&query=${encodeURIComponent(
+                displayImages[selectedImageIndex].query
+              )}`}
+              alt={displayImages[selectedImageIndex].alt}
+              className="max-w-full max-h-[90vh] object-contain"
+            />
+          </div>
+
+          {/* Next Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              navigateNext()
+            }}
+            className="absolute right-4 text-white text-5xl font-light hover:opacity-70 transition-opacity z-10"
+            aria-label="Next image"
+          >
+            &#8250;
+          </button>
+        </div>
+      )}
     </section>
   )
 }

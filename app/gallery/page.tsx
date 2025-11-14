@@ -9,9 +9,9 @@ export default function Page() {
       <Header theme="light" />
       <TwoColumnBlock
         heading="Gallery"
-        bodyText="Hair artistry in Palm Springs, where style meets personalized care."
+        bodyText="View examples of some of my recent work below."
       />
-      <Gallery hasButton={false} />
+      <Gallery hasButton={false} isGrid={true} />
       <Footer theme="light" />
     </div>
   )

@@ -7,8 +7,8 @@ export default function Page() {
     <div data-theme="light">
       <Header theme="light" />
       <TwoColumnBlock
-        heading="Hair artistry for 20 years"
-        bodyText="Hair artistry in Palm Springs, where style meets personalized care."
+        heading="About Us"
+        bodyText="With over 20 years of experience in the hair industry, I'm here to make you look your best."
       />
       <TwoColumnBlock
         heading="Nice to meet you"

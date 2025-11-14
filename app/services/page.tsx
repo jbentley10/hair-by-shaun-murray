@@ -64,7 +64,7 @@ export default function Page() {
       <Header theme="light"/>
       <TwoColumnBlock
         heading="Services tailored to you"
-        bodyText="Hair artistry in Palm Springs, where style meets personalized care."
+        bodyText="We offer a comprehensive range of hair services designed to meet your unique style and needs."
       />
       <TwoColumnBlock
         heading="Service Menu"
