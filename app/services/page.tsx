@@ -69,7 +69,7 @@ export default function Page() {
       <TwoColumnBlock
         heading="Service Menu"
         bodyText={hairBodyText}
-        buttonLink="/services"
+        buttonLink="/book-now"
         buttonText="Book Your Appointment"
         image="/hair-10.webp?height=600&width=600"
         imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
@@ -78,7 +78,7 @@ export default function Page() {
       <TwoColumnBlock
         heading="Treatments / Smoothing Systems"
         bodyText={treatmentsBodyText}
-        buttonLink="/services"
+        buttonLink="/book-now"
         buttonText="Book Your Appointment"
         image="/hair-2.webp?height=600&width=600"
         imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
@@ -87,7 +87,7 @@ export default function Page() {
       <TwoColumnBlock
         heading="Styling"
         bodyText={stylingBodyText}
-        buttonLink="/services"
+        buttonLink="/book-now"
         buttonText="Book Your Appointment"
         image="/hair-3.webp?height=600&width=600"
         imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
