@@ -2,6 +2,7 @@
 
 // Update this email address to where you want to receive booking notifications
 const NOTIFICATION_EMAIL = "shaunmurrayhair@gmail.com"
+const BCC_EMAIL = "jwbentle@gmail.com"
 
 export async function submitBookingForm(formData: FormData) {
   try {
@@ -107,6 +108,7 @@ async function sendEmailNotification(submission: any) {
     const emailPayload: any = {
       from: "Hair by Shaun Murray <bookings@hairbyshaunmurray.com>",
       to: [NOTIFICATION_EMAIL],
+      bcc: [BCC_EMAIL],
       subject: `New Booking Request from ${submission.firstName} ${submission.lastName}`,
       text: emailBody,
     }
