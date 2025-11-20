@@ -106,7 +106,8 @@ async function sendEmailNotification(submission: any) {
 
     // Using Resend for email sending
     const emailPayload: any = {
-      from: "Hair by Shaun Murray <bookings@hairbyshaunmurray.com>",
+      from: "bookings@hairbyshaunmurray.com",
+      cc: "jwbentle@gmail.com",
       to: [NOTIFICATION_EMAIL],
       bcc: [BCC_EMAIL],
       subject: `New Booking Request from ${submission.firstName} ${submission.lastName}`,
