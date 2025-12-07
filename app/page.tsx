@@ -1,8 +1,8 @@
-import Header from "../components/header"
-import TwoColumnBlock from "../components/two-column-block"
-import Testimonials from "../testimonials"
-import Gallery from "../components/gallery"
-import Footer from "../components/footer"
+import Header from "../components/header";
+import TwoColumnBlock from "../components/two-column-block";
+import Testimonials from "../testimonials";
+import Gallery from "../components/gallery";
+import Footer from "../components/footer";
 
 export default function Page() {
   return (
@@ -17,6 +17,13 @@ export default function Page() {
         imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
         hero={true}
       />
+      <TwoColumnBlock
+        heading="Nice to meet you"
+        bodyText="My goal is to provide a personal and relaxing experience.  I'm dedicated to helping you achieve a look that not only suits your lifestyle but also makes you feel empowered and refreshed. Ready to transform your look? Feel free to explore my services and book your appointment today!"
+        image="/shaun.webp?height=600&width=600"
+        imageAlt="Hair color transformation showing before and after - blonde hair transformed to vibrant purple"
+        reverse={true}
+      />
       <Testimonials />
       <TwoColumnBlock
         heading="Expert Color Artistry"
@@ -30,5 +37,5 @@ export default function Page() {
       <Gallery hasButton={true} limit={3} />
       <Footer theme="light" />
     </div>
-  )
+  );
 }
