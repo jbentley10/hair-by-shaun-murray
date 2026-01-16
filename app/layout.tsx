@@ -28,6 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head><meta name="google-site-verification" content="_VsonPihJagSgmPtjxaHxnlkW3JsCt8maL2KICX-jZ4" /></head>
       <body className={`${lato.variable} ${inter.variable}`} >
         {children}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-LJ6MBFM5XL" strategy="beforeInteractive" />
